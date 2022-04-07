@@ -110,6 +110,10 @@ object Dependencies {
     }
 
     object Network {
+        const val moshi =
+            "com.squareup.retrofit2:converter-moshi:${Version.Network.moshi}"
+        const val moshiKotlin =
+            "com.squareup.moshi:moshi-kotlin:${Version.Network.moshiKotlin}"
         const val gson =
             "com.google.code.gson:gson:${Version.Network.gson}"
         const val gsonAdapter =

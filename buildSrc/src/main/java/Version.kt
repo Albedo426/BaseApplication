@@ -64,6 +64,8 @@ object Version {
         const val conscrypt = "2.5.1"
         const val gson = "2.8.7"
         const val retrofit = "2.9.0"
+        const val moshi = retrofit
+        const val moshiKotlin = "1.11.0"
         const val rxJava3Adapter = retrofit
         const val gsonConverter = retrofit
         const val okHttp = "4.9.1"
