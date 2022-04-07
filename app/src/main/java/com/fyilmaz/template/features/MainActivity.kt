@@ -1,7 +1,7 @@
 package com.fyilmaz.template.features
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.fyilmaz.template.R
 
 class MainActivity : AppCompatActivity() {
