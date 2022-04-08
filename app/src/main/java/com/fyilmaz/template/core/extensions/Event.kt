@@ -1,7 +1,5 @@
 package com.fyilmaz.template.core.extensions
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 
 open class Event<out T>(private val content: T) {
 

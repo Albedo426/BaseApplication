@@ -12,17 +12,7 @@ buildscript {
         classpath(Classpaths.hiltGradleClasspath)
     }
 }
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-        maven {
-            url = java.net.URI.create("http://maven.google.com/")
-            url = java.net.URI.create("https://jitpack.io")
-        }
-    }
-}
+
 tasks.register("clean").configure {
     delete("build")
 }
