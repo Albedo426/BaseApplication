@@ -78,6 +78,10 @@ dependencies {
     // Coroutines
     implementation(Dependencies.Coroutines.kotlinCoroutinesAdapter)
 
+    // Navigation
+    implementation(Dependencies.Navigation.runTimeNavigation)
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
 
     // Network
     implementation(Dependencies.Network.moshi)
@@ -92,7 +96,6 @@ dependencies {
 
     // DI
     implementation(Dependencies.DI.hilt)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Dependencies.DI.hiltCompiler)
 
     // Testing

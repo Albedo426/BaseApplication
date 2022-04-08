@@ -7,4 +7,6 @@ object Classpaths {
         "com.github.ben-manes:gradle-versions-plugin:${Version.Gradle.gradleVersionPluginVersion}"
     const val hiltGradleClasspath =
         "com.google.dagger:hilt-android-gradle-plugin:${Version.Gradle.hiltVersion}"
+    const val navigationClasspath =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Version.Gradle.navigationVersion}"
 }

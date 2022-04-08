@@ -4,6 +4,7 @@ plugins {
     kotlin(Plugin.kapt)
     kotlin(Plugin.androidExtensions)
     id(Plugin.daggerHiltPlugin)
+
 }
 android {
     compileSdkVersion(Config.compileSdkVersion)
@@ -26,7 +27,6 @@ android {
             )
         }
     }
-
 }
 
 dependencies {
@@ -52,13 +52,19 @@ dependencies {
     implementation(Dependencies.DI.hilt)
     kapt(Dependencies.DI.hiltCompiler)
 
+    // Navigation
+    implementation(Dependencies.Navigation.runTimeNavigation)
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
+
+
     // ReactiveFunc
     implementation(Dependencies.ReactiveFunc.rxJava)
 
     // Timber
     implementation(Dependencies.Tools.timber)
 
-    //Testing
+    // Testing
     testImplementation(Dependencies.Test.junit)
     androidTestImplementation(Dependencies.Test.androidJunit)
     androidTestImplementation(Dependencies.Test.espressoCore)

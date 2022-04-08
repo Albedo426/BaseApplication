@@ -4,6 +4,7 @@ object Version {
         const val gradleVersionPluginVersion = "0.27.0"
         const val gradleVersion = "4.2.1"
         const val hiltVersion = "2.40.5"
+        const val navigationVersion = "2.4.2"
     }
 
     object Kotlin {
@@ -30,7 +31,7 @@ object Version {
     }
 
     object Navigation {
-        const val navigationVersion = "2.3.5"
+        const val navigationVersion = "2.4.2"
         const val runTimeNavigation = navigationVersion
         const val navigationFragment = navigationVersion
         const val navigationUI = navigationVersion
