@@ -10,6 +10,7 @@ buildscript {
         classpath(Classpaths.kotlinGradleClasspath)
         classpath(Classpaths.gradleVersionPlugin)
         classpath(Classpaths.hiltGradleClasspath)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
     }
 }
 

@@ -13,7 +13,7 @@ class ApiRepository @Inject constructor(
         return try {
             Resource.Success(service.fetchAnimeList(limit, offset))
         } catch (exception: Exception) {
-            Resource.Error("Animeleri GEtirirken Bir Hata Beydana Geldi", error = exception)
+            Resource.Error("Animeleri Getirirken Bir Hata Beydana Geldi", error = exception)
         }
     }
 }

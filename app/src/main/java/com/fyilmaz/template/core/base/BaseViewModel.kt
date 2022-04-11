@@ -4,14 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.fyilmaz.template.core.extensions.Event
-import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import retrofit2.HttpException
 import java.net.UnknownHostException
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseViewModel() : ViewModel() {
 
     /**
      * [LiveData] that emits [ProgressState] to determine show/hide state of loading indicators(ie: HUD)
@@ -22,15 +21,12 @@ abstract class BaseViewModel : ViewModel() {
 
     internal var disposable = CompositeDisposable()
 
+    private val _baseEvent = MutableLiveData<Event<BaseViewEvent>>()
+    val baseEvent: LiveData<Event<BaseViewEvent>> = _baseEvent
     override fun onCleared() {
         disposeSubscriptions()
         super.onCleared()
     }
-
-
-    private val _baseEvent = MutableLiveData<Event<BaseViewEvent>>()
-    val baseEvent: LiveData<Event<BaseViewEvent>> = _baseEvent
-
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 

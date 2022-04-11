@@ -54,11 +54,10 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
     ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         showProgressView()
-
         return binding.root
     }
 
-    private fun onViewEvent(event: BaseViewEvent) {
+     fun onViewEvent(event: BaseViewEvent) {
         when (event) {
             BaseViewEvent.ShowCommonNetworkError -> {}
             BaseViewEvent.ShowConnectivityError -> {}
@@ -122,4 +121,6 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
             }
         }
     }
+
+
 }

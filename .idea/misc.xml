@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/fatik/AndroidStudioProjects/Staj/dsl/app/src/main/res/layout/activity_main.xml" value="0.20244565217391305" />
-        <entry key="..\:/Users/fatik/AndroidStudioProjects/Staj/dsl/app/src/main/res/layout/fragment_main.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/fatik/AndroidStudioProjects/Staj/dsl/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/fatik/AndroidStudioProjects/Staj/dsl/app/src/main/res/layout/fragment_main.xml" value="0.33" />
+        <entry key="..\:/Users/fatik/AndroidStudioProjects/Staj/dsl/app/src/main/res/layout/item_anime_in_list.xml" value="0.33" />
       </map>
     </option>
   </component>

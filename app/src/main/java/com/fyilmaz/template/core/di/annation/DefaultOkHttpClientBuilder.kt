@@ -1,4 +1,4 @@
-package com.m2lifeApps.movieDb.core.di.qualifers
+package com.fyilmaz.template.core.di.annation
 
 import javax.inject.Qualifier
 

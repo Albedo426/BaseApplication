@@ -39,9 +39,6 @@ android {
         dataBinding = true
     }
 
-    dataBinding {
-        isEnabled = true
-    }
 }
 
 dependencies {
@@ -94,8 +91,13 @@ dependencies {
     implementation(Dependencies.Network.gson)
     implementation(Dependencies.Network.gsonAdapter)
 
+    // TOOLS
+    implementation(Dependencies.Tools.roundedImageView)
+    implementation(Dependencies.Tools.whynotimagecarousel)
+
     // DI
     implementation(Dependencies.DI.hilt)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Dependencies.DI.hiltCompiler)
 
     // Testing

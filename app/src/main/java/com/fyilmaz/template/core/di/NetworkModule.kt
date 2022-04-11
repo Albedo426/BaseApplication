@@ -6,9 +6,9 @@ import com.fyilmaz.template.core.base.BuildConfig
 import com.fyilmaz.template.core.network.*
 import com.fyilmaz.template.core.network.NetworkController
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.m2lifeApps.movieDb.core.di.qualifers.DefaultOkHttpClientBuilder
-import com.m2lifeApps.movieDb.core.di.qualifers.ProjectOkHttpClient
-import com.m2lifeApps.movieDb.core.di.qualifers.ProjectRetrofit
+import com.fyilmaz.template.core.di.annation.DefaultOkHttpClientBuilder
+import com.fyilmaz.template.core.di.annation.ProjectOkHttpClient
+import com.fyilmaz.template.core.di.annation.ProjectRetrofit
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
