@@ -4,8 +4,8 @@ plugins {
     id(Plugin.androidApplication)
     kotlin(Plugin.android)
     kotlin(Plugin.kapt)
-    // id(Plugin.daggerHiltPlugin)
     kotlin(Plugin.androidExtensions)
+    id(Plugin.daggerHiltPlugin)
 }
 android {
     compileSdkVersion(Config.compileSdkVersion)
@@ -39,9 +39,6 @@ android {
         dataBinding = true
     }
 
-    dataBinding {
-        isEnabled = true
-    }
 }
 
 dependencies {
@@ -50,9 +47,13 @@ dependencies {
     implementation(data())
 
     // Kotlin
-   /* implementation(Dependencies.Kotlin.kotlinStdLib)
+    implementation(Dependencies.Kotlin.kotlinStdLib)
     implementation(Dependencies.Kotlin.kotlinCoroutinesCore)
-    implementation(Dependencies.Kotlin.kotlinCoroutinesAndroid)*/
+    implementation(Dependencies.Kotlin.kotlinCoroutinesAndroid)
+    // Timber
+    implementation(Dependencies.Tools.timber)
+    implementation(Dependencies.Tools.coil)
+    // implementation(Dependencies.Tools.storyView)
 
     // Android
     implementation(Dependencies.Android.androidCore)
@@ -70,6 +71,33 @@ dependencies {
     implementation(Dependencies.Android.cardView)
     implementation(Dependencies.Android.palette)
     implementation(Dependencies.Android.workManger)
+
+    // Coroutines
+    implementation(Dependencies.Coroutines.kotlinCoroutinesAdapter)
+
+    // Navigation
+    implementation(Dependencies.Navigation.runTimeNavigation)
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
+
+    // Network
+    implementation(Dependencies.Network.moshi)
+    implementation(Dependencies.Network.moshiKotlin)
+    implementation(Dependencies.Network.retrofit)
+    implementation(Dependencies.Network.rxJavaAdapter)
+    implementation(Dependencies.Network.okHttp)
+    implementation(Dependencies.Network.loggingInterceptor)
+    implementation(Dependencies.Network.conscrypt)
+    implementation(Dependencies.Network.gson)
+    implementation(Dependencies.Network.gsonAdapter)
+
+    // TOOLS
+    implementation(Dependencies.Tools.roundedImageView)
+    implementation(Dependencies.Tools.whynotimagecarousel)
+
+    // DI
+    implementation(Dependencies.DI.hilt)
+    kapt(Dependencies.DI.hiltCompiler)
 
     // Testing
     testImplementation(Dependencies.Test.junit)

@@ -2,11 +2,11 @@ plugins {
     id(Plugin.androidLibrary)
     kotlin(Plugin.android)
     kotlin(Plugin.kapt)
-    id(Plugin.daggerHiltPlugin)
     kotlin(Plugin.androidExtensions)
+    id(Plugin.daggerHiltPlugin)
+
 }
 android {
-
     compileSdkVersion(Config.compileSdkVersion)
     buildToolsVersion = Config.buildToolsVersion
     defaultConfig {
@@ -27,7 +27,6 @@ android {
             )
         }
     }
-
 }
 
 dependencies {
@@ -40,25 +39,32 @@ dependencies {
     implementation(Dependencies.Android.androidCore)
 
     // Network
-    api(Dependencies.Network.gson)
-    api(Dependencies.Network.gsonAdapter)
-    api(Dependencies.Network.retrofit)
-    api(Dependencies.Network.rxJavaAdapter)
-    api(Dependencies.Network.okHttp)
-    api(Dependencies.Network.loggingInterceptor)
-    api(Dependencies.Network.conscrypt)
-
+    implementation(Dependencies.Network.gson)
+    implementation(Dependencies.Network.gsonAdapter)
+    implementation(Dependencies.Network.retrofit)
+    implementation(Dependencies.Network.rxJavaAdapter)
+    implementation(Dependencies.Network.okHttp)
+    implementation(Dependencies.Network.loggingInterceptor)
+    implementation(Dependencies.Network.conscrypt)
+    implementation(Dependencies.Network.conscrypt)
+    implementation(Dependencies.Network.moshi)
     // DI
     implementation(Dependencies.DI.hilt)
     kapt(Dependencies.DI.hiltCompiler)
 
+    // Navigation
+    implementation(Dependencies.Navigation.runTimeNavigation)
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
+
+
     // ReactiveFunc
-    api(Dependencies.ReactiveFunc.rxJava)
+    implementation(Dependencies.ReactiveFunc.rxJava)
 
     // Timber
-    api(Dependencies.Tools.timber)
+    implementation(Dependencies.Tools.timber)
 
-    //Testing
+    // Testing
     testImplementation(Dependencies.Test.junit)
     androidTestImplementation(Dependencies.Test.androidJunit)
     androidTestImplementation(Dependencies.Test.espressoCore)
