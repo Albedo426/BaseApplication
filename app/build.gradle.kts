@@ -1,4 +1,4 @@
-import Dependencies.Project.data
+
 
 plugins {
     id(Plugin.androidApplication)
@@ -14,11 +14,10 @@ android {
         applicationId = Config.applicationId
         minSdkVersion(Config.minSdkVersion)
         targetSdkVersion(Config.targetSdkVersion)
-        multiDexEnabled = true
+        //multiDexEnabled = true
         versionCode = Config.versionCode
         versionName = Config.versionName
         testInstrumentationRunner = Config.testInstrumentationRunner
-        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -38,13 +37,10 @@ android {
     buildFeatures {
         dataBinding = true
     }
-
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
-    implementation(data())
 
     // Kotlin
     implementation(Dependencies.Kotlin.kotlinStdLib)
@@ -104,5 +100,5 @@ dependencies {
     testImplementation(Dependencies.Test.truthExt)
     testImplementation(Dependencies.Test.mockK)
     testImplementation(Dependencies.Test.coreTesting)
-    androidTestImplementation(Dependencies.Test.androidJunit)
+    testImplementation(Dependencies.Test.androidJunit)
 }
