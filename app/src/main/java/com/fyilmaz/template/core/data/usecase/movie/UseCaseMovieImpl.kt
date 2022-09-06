@@ -9,20 +9,25 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
+import kotlin.coroutines.CoroutineContext
 
-class UseCaseMovieImpl @Inject constructor(private val remoteRepository: RemoteDataRepositoryImpl, private val localRepository: LocalData) :
+class UseCaseMovieImpl @Inject constructor(
+    private val remoteRepository: RemoteDataRepositoryImpl,
+    private val localRepository: LocalData,
+    private val coroutine: CoroutineContext
+) :
     UseCaseMovie {
     override suspend fun fetchData(): Flow<Result<MovieResponse>> {
         return try {
             // local mi sorusu burda sorulabilir
             flow {
                 emit(remoteRepository.fetchData())
-            }.flowOn(Dispatchers.IO)
+            }.flowOn(coroutine)
         } catch (exception: Exception) {
             Result.Error(exception)
             flow {
                 emit(Result.Error(exception))
-            }.flowOn(Dispatchers.IO)
+            }.flowOn(coroutine)
         }
     }
 }

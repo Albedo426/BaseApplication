@@ -34,7 +34,7 @@ abstract class BaseViewModel : ViewModel() {
         when (e) {
             is HttpException -> {
                 when (e.code()) {
-                    403 -> _baseEvent.postValue(Event(BaseViewEvent.ShowUserNotFoundError))
+                    //403 -> _baseEvent.postValue(Event(BaseViewEvent.ShowUserNotFoundError))
                     else -> {
                         if (e.code() in 499..599) {
                             _baseEvent.postValue(Event(BaseViewEvent.ShowInternalServerError))

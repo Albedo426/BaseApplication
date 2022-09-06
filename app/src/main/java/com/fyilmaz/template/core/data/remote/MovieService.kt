@@ -1,6 +1,7 @@
 package com.fyilmaz.template.core.data.remote
 
 import com.fyilmaz.template.core.data.dto.movie.MovieResponse
+import retrofit2.Response
 import retrofit2.http.POST
 import retrofit2.http.Query
 
@@ -16,5 +17,5 @@ interface MovieService {
     @POST(Discover.movie)
     suspend fun fetchMovie(
         @Query("sort_by") popularity: String = "popularity"
-    ): MovieResponse
+    ): Response<MovieResponse>
 }
