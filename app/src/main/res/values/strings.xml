@@ -28,4 +28,14 @@
     <string name="add_to_favorite">Add to favorite</string>
     <string name="test_password">ahmed</string>
     <string name="test_email">ahmed@ahmed.ahmed</string>
+    <string name="cancel">İptal</string>
+
+
+    <string name="progressDialog_title">dialog</string>
+    <string name="loading">Yükleniyor</string>
+    <string name="user_not_found_error">Oturumun süresi dolmuş. Devam etmek için tekrar giriş yapınız.</string>
+    <string name="connectivity_error">Bağlantı hatası</string>
+    <string name="something_went_wrong">Opps.. Bir şeyler ters gitti</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

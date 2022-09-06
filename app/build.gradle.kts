@@ -1,23 +1,22 @@
-
-
 plugins {
-    id(Plugin.androidApplication)
-    kotlin(Plugin.android)
-    kotlin(Plugin.kapt)
-    kotlin(Plugin.androidExtensions)
-    id(Plugin.daggerHiltPlugin)
+    id(Plugins.androidApplication)
+    id(Plugins.safeargs)
+    kotlin(Plugins.android)
+    id(Plugins.kotlinAndroidExtensions)
+    id(Plugins.hiltPlugin)
+    kotlin(Plugins.kapt)
 }
 android {
-    compileSdkVersion(Config.compileSdkVersion)
-    buildToolsVersion = Config.buildToolsVersion
+    compileSdkVersion(Configs.compileSdkVersion)
+    buildToolsVersion = Configs.buildToolsVersion
     defaultConfig {
-        applicationId = Config.applicationId
-        minSdkVersion(Config.minSdkVersion)
-        targetSdkVersion(Config.targetSdkVersion)
+        applicationId = Configs.applicationId
+        minSdkVersion(Configs.minSdkVersion)
+        targetSdkVersion(Configs.targetSdkVersion)
         //multiDexEnabled = true
-        versionCode = Config.versionCode
-        versionName = Config.versionName
-        testInstrumentationRunner = Config.testInstrumentationRunner
+        versionCode = Configs.versionCode
+        versionName = Configs.versionName
+        testInstrumentationRunner = Configs.testInstrumentationRunner
     }
 
     buildTypes {
@@ -39,61 +38,66 @@ android {
     }
 }
 
+
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
 
     // Kotlin
     implementation(Dependencies.Kotlin.kotlinStdLib)
     implementation(Dependencies.Kotlin.kotlinCoroutinesCore)
     implementation(Dependencies.Kotlin.kotlinCoroutinesAndroid)
-    // Timber
-    implementation(Dependencies.Tools.timber)
-    implementation(Dependencies.Tools.coil)
-    // implementation(Dependencies.Tools.storyView)
 
     // Android
     implementation(Dependencies.Android.androidCore)
+    implementation(Dependencies.Android.androidCoreKtx)
     implementation(Dependencies.Android.appCompat)
-    implementation(Dependencies.Android.materialDesign)
-    implementation(Dependencies.Android.constraintLayout)
-    implementation(Dependencies.Android.androidEspressoCore)
-    implementation(Dependencies.Android.androidExtJunit)
-    implementation(Dependencies.Android.androidJunit)
     implementation(Dependencies.Android.legacySupport)
     implementation(Dependencies.Android.multidex)
+    implementation(Dependencies.Android.materialDesign)
     implementation(Dependencies.Android.fragment)
+    implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.recyclerView)
-    implementation(Dependencies.Android.recyclerViewSelection)
     implementation(Dependencies.Android.cardView)
-    implementation(Dependencies.Android.palette)
-    implementation(Dependencies.Android.workManger)
-
     // Coroutines
+    implementation(Dependencies.Coroutines.coroutinesTest)
     implementation(Dependencies.Coroutines.kotlinCoroutinesAdapter)
 
     // Navigation
     implementation(Dependencies.Navigation.runTimeNavigation)
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.2")
+    // LifeCycle
+    implementation(Dependencies.LifeCycle.runTimeLiveCycle)
+    implementation(Dependencies.LifeCycle.lifeCycleCompiler)
+    implementation(Dependencies.LifeCycle.liveData)
+    implementation(Dependencies.LifeCycle.viewModel)
+    implementation( "com.google.code.gson:gson:2.8.5")
+    // Daager-Hilt
+    implementation(Dependencies.DI.hilt)
+    kapt(Dependencies.DI.hiltCompiler)
+
+    // For instrumentation tests
+    testImplementation(Dependencies.DI.hiltAndroidTesting)
+    kaptAndroidTest(Dependencies.DI.hiltCompiler)
+
+    // For local unit tests
+    testImplementation(Dependencies.DI.hiltAndroidTesting)
+    kaptTest(Dependencies.DI.hiltCompiler)
 
     // Network
-    implementation(Dependencies.Network.moshi)
-    implementation(Dependencies.Network.moshiKotlin)
+    implementation(Dependencies.Network.gson)
+    implementation(Dependencies.Network.gsonAdapter)
     implementation(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.rxJavaAdapter)
     implementation(Dependencies.Network.okHttp)
     implementation(Dependencies.Network.loggingInterceptor)
-    implementation(Dependencies.Network.conscrypt)
-    implementation(Dependencies.Network.gson)
-    implementation(Dependencies.Network.gsonAdapter)
 
-    // TOOLS
-    implementation(Dependencies.Tools.roundedImageView)
-    implementation(Dependencies.Tools.whynotimagecarousel)
-
-    // DI
-    implementation(Dependencies.DI.hilt)
-    kapt(Dependencies.DI.hiltCompiler)
+    // Glide
+    implementation(Dependencies.Glide.glide)
+    annotationProcessor(Dependencies.Glide.glideCompiler)
+    implementation(Dependencies.Tools.timber)
 
     // Testing
     testImplementation(Dependencies.Test.junit)
@@ -101,4 +105,8 @@ dependencies {
     testImplementation(Dependencies.Test.mockK)
     testImplementation(Dependencies.Test.coreTesting)
     testImplementation(Dependencies.Test.androidJunit)
+    testImplementation(Dependencies.Test.espressoCore)
+    // logto
+    implementation("io.logto.sdk:android:1.0.0-alpha.0")
+
 }

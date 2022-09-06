@@ -1,169 +1,218 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
+// DI
 object Dependencies {
 
     object Kotlin {
-        const val kotlinStdLib =
-            "org.jetbrains.kotlin:kotlin-stdlib:${Version.Kotlin.kotlinStdLib}"
-        const val kotlinCoroutinesCore =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.Kotlin.kotlinCoroutinesCore}"
-        const val kotlinCoroutinesAndroid =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.Kotlin.kotlinCoroutinesCore}"
+        val kotlinStdLib by lazy {
+            "org.jetbrains.kotlin:kotlin-stdlib:${Versions.Kotlin.kotlinStdLib}"
+        }
+        val kotlinCoroutinesCore by lazy {
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.kotlinCoroutinesCore}"
+        }
+        val kotlinCoroutinesAndroid by lazy {
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.kotlinCoroutinesCore}"
+        }
 
         object Test {
-            const val common =
-                "org.jetbrains.kotlin:kotlin-test-common:${Version.Kotlin.kotlinVersion}"
-            const val annotations =
-                "org.jetbrains.kotlin:kotlin-test-annotations-common:${Version.Kotlin.kotlinVersion}"
-            const val junit =
-                "org.jetbrains.kotlin:kotlin-test-junit:${Version.Kotlin.kotlinVersion}"
+            val common by lazy {
+                "org.jetbrains.kotlin:kotlin-test-common:${Versions.Kotlin.kotlinVersion}"
+            }
+            val annotations by lazy {
+                "org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.Kotlin.kotlinVersion}"
+            }
+            val junit by lazy {
+                "org.jetbrains.kotlin:kotlin-test-junit:${Versions.Kotlin.kotlinVersion}"
+            }
         }
     }
 
     object Android {
-        const val androidJunit =
-            "junit:junit:"
-        const val androidExtJunit =
-            "androidx.core:core-ktx:${Version.Android.extJunit}"
-        const val androidEspressoCore =
-            "androidx.test.espresso:espresso-core:${Version.Android.espressoCore}"
-        const val androidCore =
-            "androidx.core:core-ktx:${Version.Android.androidCore}"
-        const val appCompat =
-            "androidx.appcompat:appcompat:${Version.Android.appCompat}"
-        const val legacySupport =
-            "androidx.legacy:legacy-support-v4:${Version.Android.legacySupport}"
-        const val multidex =
-            "androidx.multidex:multidex:${Version.Android.multiDex}"
-        const val materialDesign =
-            "com.google.android.material:material:${Version.Android.materialDesign}"
-        const val fragment =
-            "androidx.fragment:fragment-ktx:${Version.Android.fragmentVersion}"
-        const val constraintLayout =
-            "androidx.constraintlayout:constraintlayout:${Version.Android.constraintLayout}"
-        const val recyclerView =
-            "androidx.recyclerview:recyclerview:${Version.Android.recyclerView}"
-        const val recyclerViewSelection =
-            "androidx.recyclerview:recyclerview:${Version.Android.recyclerViewSelection}"
-        const val cardView =
-            "androidx.cardview:cardview:${Version.Android.cardView}"
-        const val palette =
-            "androidx.palette:palette-ktx:${Version.Android.palette}"
-        const val workManger =
-            "androidx.work:work-runtime-ktx:${Version.Android.workManager}"
+        val androidCoreKtx by lazy {
+            "androidx.core:core-ktx:${Versions.Android.androidCore}"
+        }
+        val androidCore by lazy {
+            "androidx.core:core:${Versions.Android.androidCore}"
+        }
+        val appCompat by lazy {
+            "androidx.appcompat:appcompat:${Versions.Android.appCompat}"
+        }
+        val legacySupport by lazy {
+            "androidx.legacy:legacy-support-v4:${Versions.Android.legacySupport}"
+        }
+        val multidex by lazy {
+            "androidx.multidex:multidex:${Versions.Android.multiDex}"
+        }
+        val materialDesign by lazy {
+            "com.google.android.material:material:${Versions.Android.materialDesign}"
+        }
+        val fragment by lazy {
+            "androidx.fragment:fragment-ktx:${Versions.Android.fragmentVersion}"
+        }
+        val constraintLayout by lazy {
+            "androidx.constraintlayout:constraintlayout:${Versions.Android.constraintLayout}"
+        }
+        val recyclerView by lazy {
+            "androidx.recyclerview:recyclerview:${Versions.Android.recyclerView}"
+        }
+
+        val cardView by lazy {
+            "androidx.cardview:cardview:${Versions.Android.cardView}"
+        }
     }
 
     object Coroutines {
 
-        // Coroutines
-        const val coroutinesAandroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
-        const val kotlinCoroutinesAdapter =
+        val coroutinesAandroid by lazy {
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+        }
+        val kotlinCoroutinesAdapter by lazy {
             "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
-        const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0"
-        const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    }
-
-    object Navigation {
-        const val runTimeNavigation =
-            "androidx.navigation:navigation-runtime-ktx:${Version.Navigation.runTimeNavigation}"
-        const val navigationFragment =
-            "androidx.navigation:navigation-fragment-ktx:${Version.Navigation.navigationFragment}"
-        const val navigationUi =
-            "androidx.navigation:navigation-ui-ktx:${Version.Navigation.navigationUI}"
-    }
-
-    object LifeCycle {
-        const val runTimeLiveCycle =
-            "androidx.lifecycle:lifecycle-runtime-ktx:${Version.LifeCycle.runTimeLifeCycle}"
-        const val lifeCycleCompiler =
-            "androidx.lifecycle:lifecycle-compiler:${Version.LifeCycle.viewModelState}"
-        const val liveData =
-            "androidx.lifecycle:lifecycle-livedata-ktx:${Version.LifeCycle.liveData}"
-        const val viewModel =
-            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LifeCycle.viewModel}"
-        const val viewModelState =
-            "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Version.LifeCycle.viewModelState}"
-    }
-
-    object DI {
-        const val hilt =
-            "com.google.dagger:hilt-android:${Version.DI.hilt}"
-        const val hiltWork =
-            "androidx.hilt:hilt-work:${Version.DI.hiltWork}"
-        const val hiltCompiler =
-            "com.google.dagger:hilt-android-compiler:${Version.DI.hiltComp}"
-        const val hiltNavigation =
-            "androidx.hilt:hilt-navigation-fragment:${Version.DI.hiltNavigation}"
-        const val hiltViewModel =
-            "androidx.hilt:hilt-lifecycle-viewmodel:${Version.DI.hiltViewModel}"
-        const val hiltWorkManagerCompiler =
-            "androidx.hilt:hilt-compiler:${Version.DI.hiltCompiler}"
-    }
-
-    object ReactiveFunc {
-        const val rxJava =
-            "io.reactivex.rxjava3:rxjava:${Version.ReactiveFunc.rxJava}"
-        const val rxKotlin =
-            "io.reactivex.rxjava3:rxkotlin:${Version.ReactiveFunc.rxKotlin}"
-        const val rxAndroid =
-            "io.reactivex.rxjava3:rxandroid:${Version.ReactiveFunc.rxAndroid}"
-    }
-
-    object Network {
-        const val moshi =
-            "com.squareup.retrofit2:converter-moshi:${Version.Network.moshi}"
-        const val moshiKotlin =
-            "com.squareup.moshi:moshi-kotlin:${Version.Network.moshiKotlin}"
-        const val gson =
-            "com.google.code.gson:gson:${Version.Network.gson}"
-        const val gsonAdapter =
-            "com.squareup.retrofit2:converter-gson:${Version.Network.gsonConverter}"
-        const val retrofit =
-            "com.squareup.retrofit2:retrofit:${Version.Network.retrofit}"
-        const val rxJavaAdapter =
-            "com.squareup.retrofit2:adapter-rxjava3:${Version.Network.rxJava3Adapter}"
-        const val okHttp =
-            "com.squareup.okhttp3:okhttp:${Version.Network.okHttp}"
-        const val loggingInterceptor =
-            "com.squareup.okhttp3:logging-interceptor:${Version.Network.loggingInterceptor}"
-        const val conscrypt =
-            "org.conscrypt:conscrypt-android:${Version.Network.conscrypt}"
+        }
+        val coroutinesTest by lazy {
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
+        }
+        val coroutinesCore by lazy {
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
+        }
     }
 
     object Tools {
 
-        const val roundedImageView =
-            "com.makeramen:roundedimageview:${Version.Tools.roundedImageView}"
-        const val whynotimagecarousel =
-            "org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:${Version.Tools.whynotimagecarousel}"
-
-        const val coil =
-            "io.coil-kt:coil:${Version.Tools.coil}"
-        const val timber =
-            "com.jakewharton.timber:timber:${Version.Tools.timber}"
-        const val lottie =
-            "com.airbnb.android:lottie:${Version.Tools.lottie}"
+        val timber by lazy {
+            "com.jakewharton.timber:timber:${Versions.Tools.timber}"
+        }
     }
 
-    object Dialogs {
-        const val dialogCore = "com.afollestad.material-dialogs:core:${Version.Dialogs.core}"
+    object Navigation {
+        val runTimeNavigation by lazy {
+            "androidx.navigation:navigation-runtime-ktx:${Versions.Navigation.runTimeNavigation}"
+        }
+        val navigationFragment by lazy {
+            "androidx.navigation:navigation-fragment-ktx:${Versions.Navigation.navigationFragment}"
+        }
+
+        val navigationUi by lazy {
+            "androidx.navigation:navigation-ui-ktx:${Versions.Navigation.navigationUI}"
+        }
     }
+
+    object Google {
+        val googleLocation by lazy {
+            "com.google.android.gms:play-services-location:18.0.0"
+        }
+    }
+
+    object LifeCycle {
+        val runTimeLiveCycle by lazy {
+            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LifeCycle.runTimeLifeCycle}"
+        }
+        val lifeCycleCompiler by lazy {
+            "androidx.lifecycle:lifecycle-compiler:${Versions.LifeCycle.viewModelState}"
+        }
+        val liveData by lazy {
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LifeCycle.liveData}"
+        }
+        val viewModel by lazy {
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LifeCycle.viewModel}"
+        }
+    }
+
+    object DI {
+
+        val hilt by lazy {
+            "com.google.dagger:hilt-android:${Versions.DI.hilt}"
+        }
+        val hiltCompiler by lazy {
+            "com.google.dagger:hilt-compiler:${Versions.DI.hilt}"
+        }
+
+        val hiltAndroidTesting by lazy {
+            "com.google.dagger:hilt-android-testing:${Versions.DI.hilt}"
+        }
+    }
+
+    object Network {
+        val gson by lazy {
+            "com.google.code.gson:gson:${Versions.Network.gson}"
+        }
+        val gsonAdapter by lazy {
+            "com.squareup.retrofit2:converter-gson:${Versions.Network.gsonConverter}"
+        }
+        val retrofit by lazy {
+            "com.squareup.retrofit2:retrofit:${Versions.Network.retrofit}"
+        }
+        val rxJavaAdapter by lazy {
+            "com.squareup.retrofit2:adapter-rxjava3:${Versions.Network.rxJava3Adapter}"
+        }
+        val okHttp by lazy {
+            "com.squareup.okhttp3:okhttp:${Versions.Network.okHttp}"
+        }
+        val loggingInterceptor by lazy {
+            "com.squareup.okhttp3:logging-interceptor:${Versions.Network.loggingInterceptor}"
+        }
+    }
+
+    object AppCenter {
+        val appCenterAnalytics by lazy {
+            "com.microsoft.appcenter:appcenter-analytics:4.3.1"
+        }
+        val appCenterCrashes by lazy {
+            "com.microsoft.appcenter:appcenter-crashes:4.3.1"
+        }
+    }
+
+    object MapBox {
+
+        val mapBoxAndroid by lazy {
+            "com.mapbox.navigation:android:2.7.0"
+        }
+    }
+
+    object Firebase {
+        val firebaseBom by lazy {
+            "com.google.firebase:firebase-bom:${Versions.GoogleFirebase.firebaseBom}"
+        }
+        val firebaseCrashlytics by lazy {
+            "com.google.firebase:firebase-crashlytics:${Versions.GoogleFirebase.firebaseCrashlytics}"
+        }
+        val firebaseAnalitics by lazy {
+            "com.google.firebase:firebase-analytics:${Versions.GoogleFirebase.firebaseAnalitics}"
+        }
+    }
+
+    object Glide {
+        val glide by lazy {
+            "com.github.bumptech.glide:glide:${Versions.Glide.core}"
+        }
+        val glideCompiler by lazy {
+            "com.github.bumptech.glide:compiler:${Versions.Glide.core}"
+        }
+    }
+
     object Project {
         fun DependencyHandler.app() = project(mapOf("path" to ":app"))
         fun DependencyHandler.data() = project(mapOf("path" to ":data"))
     }
+
     object Test {
-        const val junit =
-            "junit:junit:${Version.Test.junit}"
-        const val androidJunit =
-            "androidx.test.ext:junit:${Version.Test.androidJunit}"
-        const val espressoCore =
-            "androidx.test.espresso:espresso-core:${Version.Test.espressoCore}"
-        const val truthExt =
-            "androidx.test.ext:truth:${Version.Test.truthExtVersion}"
-        const val mockK =
-            "io.mockk:mockk:${Version.Test.mockKVersion}"
-        const val coreTesting =
-            "androidx.arch.core:core-testing:${Version.Test.coreTestingVersion}"
+        val junit by lazy {
+            "junit:junit:${Versions.Test.junit}"
+        }
+        val androidJunit by lazy {
+            "androidx.test.ext:junit:${Versions.Test.androidJunit}"
+        }
+        val espressoCore by lazy {
+            "androidx.test.espresso:espresso-core:${Versions.Test.espressoCore}"
+        }
+        val truthExt by lazy {
+            "androidx.test.ext:truth:${Versions.Test.truthExtVersion}"
+        }
+        val mockK by lazy {
+            "io.mockk:mockk:${Versions.Test.mockKVersion}"
+        }
+        val coreTesting by lazy {
+            "androidx.arch.core:core-testing:${Versions.Test.coreTestingVersion}"
+        }
     }
 }

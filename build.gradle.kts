@@ -7,8 +7,9 @@ buildscript {
     dependencies {
         classpath(Classpaths.gradleClasspath)
         classpath(Classpaths.kotlinGradleClasspath)
-        classpath(Classpaths.gradleVersionPlugin)
-        classpath(Classpaths.hiltGradleClasspath)
+        classpath(Classpaths.kotlinSerialization)
+        classpath(Classpaths.safeVarargs)
+        classpath(Classpaths.hiltGradlePlugin)
     }
 }
 

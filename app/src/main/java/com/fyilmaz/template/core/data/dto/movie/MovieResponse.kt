@@ -1,4 +1,4 @@
-package com.fyilmaz.data.dto.movie
+package com.fyilmaz.template.core.data.dto.movie
 
 
 import com.google.gson.annotations.SerializedName

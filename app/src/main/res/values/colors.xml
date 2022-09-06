@@ -7,4 +7,56 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dimmed_text">#B0AFAF</color>
+    <color name="cricle_border">#80292929</color>
+    <color name="soft_bg">#F44336</color>
+    <color name="main_text">#130F26</color>
+    <color name="main_text_alpha_05">#80130F26</color>
+    <color name="main_text_alpha_08">#CC130F26</color>
+    <color name="main_red">#EB2127</color>
+    <color name="main_deactive">#666666</color>
+    <color name="on_boarding_title_color">#260F43</color>
+    <color name="on_boarding_text_color">#8A8A8F</color>
+    <color name="disabled">#BABABA</color>
+    <color name="transparent">#00000000</color>
+    <color name="unselect_color">#D9D9D9</color>
+    <color name="settings_line">#F9F9F9</color>
+    <color name="view_color">#F9F9F9</color>
+    <color name="soft_gray">#BDBDBD</color>
+    <!-- Shadow Colors -->
+    <color name="shadow_01">#01360000</color>
+    <color name="shadow_02">#02CCD0E0</color>
+    <color name="shadow_03">#03CCD0E0</color>
+    <color name="shadow_04">#04CCD0E0</color>
+    <color name="shadow_05">#05CCD0E0</color>
+    <color name="shadow_06">#06CCD0E0</color>
+    <color name="shadow_07">#07CCD0E0</color>
+    <color name="shadow_08">#08CCD0E0</color>
+    <color name="shadow_09">#09CCD0E0</color>
+    <color name="shadow_10">#10CCD0E0</color>
+    <color name="shadow_11">#11CCD0E0</color>
+    <color name="shadow_12">#12CCD0E0</color>
+    <color name="shadow_13">#13CCD0E0</color>
+    <color name="shadow_14">#14CCD0E0</color>
+    <color name="shadow_15">#15CCD0E0</color>
+    <color name="shadow_16">#16CCD0E0</color>
+    <color name="shadow_17">#17CCD0E0</color>
+    <color name="shadow_18">#18CCD0E0</color>
+    <color name="shadow_19">#19CCD0E0</color>
+    <color name="shadow_20">#11CCD0E0</color>
+    <color name="shadow_21">#1292949E</color>
+    <color name="green">#00B42D</color>
+
+    <color name="defaultTextColor">#FFFFFF</color>
+    <color name="errorColor">#D50000</color>
+    <color name="infoColor">#3F51B5</color>
+    <color name="successColor">#388E3C</color>
+    <color name="warningColor">#FFA900</color>
+    <color name="normalColor">#353A3E</color>
+
+    <color name="black_light">#2C2C2C</color>
+    <color name="white_dark">#CCCCCC</color>
+
+    <color name="bg_light">@color/white</color>
+    <color name="bg_dark">@color/black_light</color>
 </resources>

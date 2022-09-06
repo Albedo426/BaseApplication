@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Template">
         <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.prelogin.PreLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

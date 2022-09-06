@@ -1,4 +1,4 @@
-package com.fyilmaz.data.dto.login
+package com.fyilmaz.template.core.data.dto.login
 
 data class LoginResponse(
     val id: String? = null,

@@ -1,25 +1,21 @@
 package com.fyilmaz.template.core.platform
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.util.Base64
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.fyilmaz.template.core.data.dto.error.ErrorResponse
 import com.fyilmaz.template.core.extensions.Event
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import retrofit2.HttpException
+import java.net.ConnectException
 import java.net.UnknownHostException
 
 abstract class BaseViewModel : ViewModel() {
-    /**
-     * [LiveData] that emits [ProgressState] to determine show/hide state of loading indicators(ie: HUD)
-     */
+
     internal val progressStateObservable: MutableLiveData<ProgressState> by lazy {
         MutableLiveData()
     }
@@ -31,7 +27,6 @@ abstract class BaseViewModel : ViewModel() {
     private val _baseEvent = MutableLiveData<Event<BaseViewEvent>>()
     val baseEvent: LiveData<Event<BaseViewEvent>> = _baseEvent
 
-    val netWorkerController = MutableLiveData<Boolean>()
 
     fun setLoading(loading: Boolean) = _loading.postValue(loading)
     open fun handleException(e: Exception) {
@@ -39,7 +34,7 @@ abstract class BaseViewModel : ViewModel() {
         when (e) {
             is HttpException -> {
                 when (e.code()) {
-                    //  403 -> _baseEvent.postValue(Event(BaseViewEvent.ShowUserNotFoundError))
+                    403 -> _baseEvent.postValue(Event(BaseViewEvent.ShowUserNotFoundError))
                     else -> {
                         if (e.code() in 499..599) {
                             _baseEvent.postValue(Event(BaseViewEvent.ShowInternalServerError))
@@ -64,6 +59,7 @@ abstract class BaseViewModel : ViewModel() {
             is JsonSyntaxException -> showCommonNetworkError()
 
             is UnknownHostException -> showCommonNetworkError()
+            is ConnectException -> showConnectivityError()
         }
     }
 
@@ -98,36 +94,8 @@ abstract class BaseViewModel : ViewModel() {
             Base64.NO_WRAP
         )
     }
-    private fun isNetworkAvailable(context: Context): Boolean {
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-            if (capabilities != null) {
-                when {
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
-                        return true
-                    }
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
-                        return true
-                    }
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
-                        return true
-                    }
-                }
-            }
-        } else {
-            val activeNetworkInfo = connectivityManager.activeNetworkInfo
-            if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
-                return true
-            }
-        }
-        return false
-    }
-    fun controlNetwork(): Boolean = isNetworkAvailable(ProjectApplication.appContext)
 
-    fun networkAvailable(context: Context) {
-        netWorkerController.value = isNetworkAvailable(context)
-    }
+
     private fun forceLogout() =
         _baseEvent.postValue(Event(BaseViewEvent.ForceLogout))
     fun showConnectivityError() =

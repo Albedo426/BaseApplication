@@ -1,8 +1,8 @@
 package com.fyilmaz.template.core.di
 
 import android.content.Context
-import com.fyilmaz.data.local.LocalData
-import com.fyilmaz.template.core.data.service.MovieService
+import com.fyilmaz.template.core.data.local.LocalData
+import com.fyilmaz.template.core.data.remote.MovieService
 import com.fyilmaz.template.core.netwok.DEFAULT_CALL_TIMEOUT_MILLIS
 import com.fyilmaz.template.core.netwok.DEFAULT_CONNECT_TIMEOUT_MILLIS
 import com.fyilmaz.template.core.netwok.DEFAULT_READ_TIMEOUT_MILLIS
