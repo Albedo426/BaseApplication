@@ -1,4 +1,4 @@
-package com.kale.alarm.core.views.toasty
+package com.fyilmaz.template.core.views.toasty
 
 import android.content.Context
 import android.graphics.PorterDuff

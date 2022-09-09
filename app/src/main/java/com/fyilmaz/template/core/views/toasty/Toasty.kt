@@ -1,4 +1,4 @@
-package com.kale.alarm.core.views.toasty
+package com.fyilmaz.template.core.views.toasty
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,25 +16,6 @@ import android.widget.Toast
 import androidx.annotation.*
 import com.fyilmaz.template.R
 
-/**
- * This file is part of Toasty.
- *
- *
- * Toasty is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- *
- * Toasty is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- *
- * You should have received a copy of the GNU General Public License
- * along with Toasty.  If not, see <http:></http:>//www.gnu.org/licenses/>.
- */
 @SuppressLint("InflateParams")
 object Toasty {
     private val LOADED_TOAST_TYPEFACE = Typeface.create("sans-serif-condensed", Typeface.NORMAL)

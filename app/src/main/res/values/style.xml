@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">@dimen/text_size_n2</item>
+        <item name="android:textColor">@color/main_text</item>
+    </style>
+
+    <style name="TextStyle5">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="TextStyle5b">
+        <item name="android:textSize">@dimen/text_size_5</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextStyle4">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.31</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+
+    <style name="TextStyle4b">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.31</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+
+    <style name="TextStyle4l">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.31</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+
+    <style name="TextStyle4m">
+        <item name="android:textSize">@dimen/text_size_4</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.31</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+
+    <style name="TextStyle3">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.12</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+
+    </style>
+
+    <style name="TextStyle3b">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+        <item name="android:lineSpacingMultiplier">1.12</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="TextStyle3l">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:lineSpacingMultiplier">1.12</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle3m">
+        <item name="android:textSize">@dimen/text_size_3</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.12</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle2">
+        <item name="android:textSize">@dimen/text_size_2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:lineSpacingMultiplier">1.17</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle2b">
+        <item name="android:textSize">@dimen/text_size_2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:lineSpacingMultiplier">1.17</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle2l">
+        <item name="android:textSize">@dimen/text_size_2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.17</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle2m">
+        <item name="android:textSize">@dimen/text_size_2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:lineSpacingMultiplier">1.17</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle1">
+        <item name="android:textSize">@dimen/text_size_1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle1b">
+        <item name="android:textSize">@dimen/text_size_1</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+
+    <style name="TextStyle1l">
+        <item name="android:textSize">@dimen/text_size_1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+
+    </style>
+
+    <style name="TextStyle1m">
+        <item name="android:textSize">@dimen/text_size_1</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">true</item>
+
+    </style>
+
+    <style name="TextStyle0">
+        <item name="android:textSize">@dimen/text_size_0</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle0b">
+        <item name="android:textSize">@dimen/text_size_0</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle0l">
+        <item name="android:textSize">@dimen/text_size_0</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStyle0t">
+        <item name="android:textSize">@dimen/text_size_0</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStylen1">
+        <item name="android:textSize">@dimen/text_size_n1</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStylen1m">
+        <item name="android:textSize">@dimen/text_size_n1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStylen1b">
+        <item name="android:textSize">@dimen/text_size_n1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextStylen1l">
+        <item name="android:textSize">@dimen/text_size_n1</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStylen2">
+        <item name="android:textSize">@dimen/text_size_n2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+
+    </style>
+
+    <style name="TextStylen2m">
+        <item name="android:textSize">@dimen/text_size_n2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+
+    </style>
+
+    <style name="TextStylen2b">
+        <item name="android:textSize">@dimen/text_size_n2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+
+    <style name="TextStylen2l">
+        <item name="android:textSize">@dimen/text_size_n2</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+
+    </style>
+
+    <style name="TextStylen3">
+        <item name="android:textSize">@dimen/text_size_n3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+    </style>
+
+    <style name="TextStylen3m">
+        <item name="android:textSize">@dimen/text_size_n3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+    </style>
+
+    <style name="TextStylen3b">
+        <item name="android:textSize">@dimen/text_size_n3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+        <item name="android:includeFontPadding">false</item>
+
+    </style>
+
+    <style name="TextStylen3l">
+        <item name="android:textSize">@dimen/text_size_n3</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+
+    </style>
+    <style name="TextStylen4">
+        <item name="android:textSize">@dimen/text_size_n4</item>
+        <item name="android:textColor">@color/main_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="hintTextColor">@color/dimmed_text</item>
+    </style>
+
+
+</resources>

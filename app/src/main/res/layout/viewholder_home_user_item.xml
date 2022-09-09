@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userItemUiState"
+            type="com.fyilmaz.template.core.data.dto.user.RandomUsers.Result" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_padding_4dp"
+        app:cardCornerRadius="@dimen/elevation_4"
+        app:cardElevation="@dimen/corner_4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPhoto"
+                app:imageUrl="@{userItemUiState.picture.medium}"
+                android:layout_width="@dimen/margin_component_7x"
+                android:layout_height="@dimen/margin_component_7x"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvName"
+                style="@style/TextStylen2"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:text="@{userItemUiState.name.first}"
+                app:layout_constraintBottom_toTopOf="@+id/tvMail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivPhoto"
+                app:layout_constraintTop_toTopOf="@+id/ivPhoto"
+
+                android:layout_marginStart="@dimen/margin_padding_4dp"
+                android:layout_marginEnd="@dimen/margin_padding_4dp"
+                tools:text="Fatih Yılmaz" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMail"
+                style="@style/TextStylen2"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+
+                android:layout_marginStart="@dimen/margin_padding_4dp"
+                android:layout_marginEnd="@dimen/margin_padding_4dp"
+                android:text="@{userItemUiState.email}"
+                app:layout_constraintBottom_toTopOf="@+id/tvPhone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="fatikyilmaz@hotmail.com" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPhone"
+                style="@style/TextStylen2"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+
+                android:text="@{userItemUiState.phone}"
+
+                android:layout_marginStart="@dimen/margin_padding_4dp"
+                android:layout_marginEnd="@dimen/margin_padding_4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/tvMail"
+                tools:text="0532 123 12 12" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

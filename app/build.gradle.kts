@@ -76,6 +76,8 @@ dependencies {
     implementation( "com.google.code.gson:gson:2.8.5")
     // Daager-Hilt
     implementation(Dependencies.DI.hilt)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.paging:paging-common-ktx:3.1.1")
     kapt(Dependencies.DI.hiltCompiler)
 
     // For instrumentation tests

@@ -16,7 +16,7 @@ import com.fyilmaz.template.R
 import com.fyilmaz.template.core.extensions.observe
 import com.fyilmaz.template.core.extensions.observeEvent
 import com.fyilmaz.template.core.views.ProgressDialog
-import com.kale.alarm.core.views.toasty.Toasty
+import com.fyilmaz.template.core.views.toasty.Toasty
 
 abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
     @LayoutRes private val layoutId: Int,
@@ -58,17 +58,7 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
 
     private fun onViewEvent(event: BaseViewEvent) {
         when (event) {
-            BaseViewEvent.ShowCommonNetworkError -> showError(resources.getString(R.string.something_went_wrong))
-
-            BaseViewEvent.ShowConnectivityError -> showError(resources.getString(R.string.connectivity_error))
-
-            BaseViewEvent.ShowUserNotFoundError -> {
-
-                showError(resources.getString(R.string.user_not_found_error))
-            }
-
             is BaseViewEvent.ShowCustomError -> showError(event.message)
-            is BaseViewEvent.ShowCustomSucess -> showSuccess(event.message)
         }
     }
 

@@ -1,14 +1,11 @@
 package com.fyilmaz.template.core.data
 
-import retrofit2.HttpException
+import com.fyilmaz.template.core.data.dto.error.ErrorResponse
 
 sealed class Result<out R> {
 
     data class Success<out T>(val data: T) : Result<T>()
-    data class Error(val exception: Exception) : Result<Nothing>() {
-        val code: Int
-            get() = (exception as? HttpException)?.code() ?: 0
-    }
+    data class Error(val exception: ErrorResponse?) : Result<Nothing>()
 
     override fun toString(): String {
         return when (this) {
@@ -23,4 +20,4 @@ val Result<*>.succeeded
 
 val Result<*>.unAuthorized
     get() = (this is Result.Error) &&
-        (exception as? HttpException)?.code() == 401
+        (exception?.error == 401)

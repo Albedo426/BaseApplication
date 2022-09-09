@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,29 +11,103 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presenter.auth.forgot.presenter.ForgotPasswordFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".presenter.auth.forgot.presenter.ForgotPasswordFragment">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pageTitle"
+                style="@style/TextStyle5b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/margin_component_4x"
+                android:alpha="0.8"
+                android:text="@string/user_login"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/nameEditText"
+                style="@style/TextStyle0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_30dp"
+                android:layout_marginEnd="@dimen/margin_padding_30dp"
+                android:background="@drawable/ic_round_edit_text"
+                android:hint="@string/username"
+                android:lines="1"
+                android:paddingHorizontal="@dimen/margin_component_2x"
+                android:paddingVertical="@dimen/margin_padding_20dp"
+                android:text="@={viewModel.username}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customerNoTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_12dp"
+                app:boxBackgroundColor="@color/settings_line"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeColor="@color/settings_line"
+                app:boxStrokeWidth="0dp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameEditText"
+                app:passwordToggleEnabled="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/customerNoEditText"
+                    style="@style/TextStyle0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_round_edit_text"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:lines="1"
+                    android:paddingHorizontal="@dimen/margin_component_2x"
+                    android:text="@={viewModel.password}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button"
+                style="@style/TextStyle3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_component_8x"
+                android:layout_marginStart="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_30dp"
+                android:layout_marginEnd="@dimen/margin_padding_30dp"
+                android:background="@drawable/ic_round_button"
+                android:onClick="@{()-> viewModel.doLogin()}"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:customAlphaEnabled="@{viewModel.enabled}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customerNoTextInputLayout" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

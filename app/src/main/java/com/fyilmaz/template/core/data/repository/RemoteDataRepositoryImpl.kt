@@ -1,40 +1,38 @@
 package com.fyilmaz.template.core.data.repository
 
-import androidx.annotation.VisibleForTesting
+import androidx.paging.PagingSource
 import com.fyilmaz.template.core.data.Result
+import com.fyilmaz.template.core.data.dto.error.ErrorMapper
 import com.fyilmaz.template.core.data.dto.error.ErrorResponse
-import com.fyilmaz.template.core.data.dto.error.NETWORK_ERROR
-import com.fyilmaz.template.core.data.dto.movie.MovieResponse
+import com.fyilmaz.template.core.data.dto.user.RandomUsers
 import com.fyilmaz.template.core.data.remote.MovieService
-import com.fyilmaz.template.core.netwok.NetworkConnectivity
+import com.fyilmaz.template.core.netwok.Network
 import retrofit2.Response
-import java.io.IOException
 import java.net.ConnectException
-import kotlin.coroutines.CoroutineContext
 
 class RemoteDataRepositoryImpl(
-    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    internal val service: MovieService,
-    private val networkConnectivity: NetworkConnectivity
+    private val service: MovieService,
+    private val networkConnectivity: Network
 ) : RemoteDataRepository {
-    override suspend fun fetchData(): Result<MovieResponse> {
-        return when (val response = processCall(service::fetchMovie)) {
-            is MovieResponse -> {
-                Result.Success(data = response)
-            }
-            else -> {
-                Result.Error(response as Exception)
-            }
+    override suspend fun fetchData(): Result<RandomUsers> {
+        return when (val response = processCall(service::fetchUsers)) {
+
+            is RandomUsers -> Result.Success(data = response)
+
+            is ErrorResponse -> Result.Error(response)
+
+            else -> Result.Error(null)
         }
     }
 
-
     private suspend fun processCall(responseCall: suspend () -> Response<*>): Any? {
+        if (!networkConnectivity.isConnected())
+            return ErrorMapper.getError(ConnectException())
         return try {
             val response = responseCall.invoke()
             response.body()
         } catch (e: Exception) {
-            e
+            ErrorMapper.getError(e)
         }
     }
 }

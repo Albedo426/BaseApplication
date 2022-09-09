@@ -1,12 +1,11 @@
 package com.fyilmaz.template.ui.auth.login.presenter
 
-import android.util.Log
-import android.widget.Toast
 import com.fyilmaz.template.R
-import com.fyilmaz.template.core.extensions.observe
+import com.fyilmaz.template.core.common.PageName.Login.login
 import com.fyilmaz.template.core.extensions.observeEvent
 import com.fyilmaz.template.core.platform.BaseFragment
 import com.fyilmaz.template.databinding.FragmentLoginBinding
+import com.fyilmaz.template.ui.MainActivity
 import com.fyilmaz.template.ui.auth.login.domain.LoginViewEvent
 import com.fyilmaz.template.ui.auth.login.domain.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,7 +16,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(
     viewModelClass = LoginViewModel::class.java
 ) {
     override fun getScreenKey(): String {
-        return "LoginFragment"
+        return login
     }
 
     override fun onDataBinding() {
@@ -26,7 +25,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(
     }
     private fun onViewEvent(event: LoginViewEvent) {
         when (event) {
-
+            is LoginViewEvent.GoToMain -> {
+                startActivity(MainActivity.newIntent(requireContext())).apply {
+                    requireActivity().finish()
+                }
+            }
         }
     }
 }
