@@ -14,7 +14,6 @@ abstract class BaseViewModel : ViewModel() {
     internal val progressStateObservable: MutableLiveData<ProgressState> by lazy {
         MutableLiveData()
     }
-    internal var disposable = CompositeDisposable()
 
     private val _loading = MutableLiveData(false)
     val loading: LiveData<Boolean> = _loading
@@ -34,13 +33,6 @@ abstract class BaseViewModel : ViewModel() {
     }
 
 
-    private fun disposeSubscriptions() {
-        if (!disposable.isDisposed) disposable.dispose()
-    }
-
-    internal fun clearSubscriptions() {
-        disposable.clear()
-    }
 
     internal fun emitProgressShow() {
         progressStateObservable.postValue(ProgressState.Show)
@@ -51,7 +43,6 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     override fun onCleared() {
-        disposeSubscriptions()
         super.onCleared()
     }
 
@@ -59,9 +50,6 @@ abstract class BaseViewModel : ViewModel() {
         _baseEvent.postValue(Event(BaseViewEvent.ShowCustomError(message)))
 
 
-    /**
-     * Used with [progressStateObservable] for emitting state to show/hide loading indicators.(ie: HUD)
-     */
     sealed class ProgressState {
         object Show : ProgressState()
         object Hide : ProgressState()

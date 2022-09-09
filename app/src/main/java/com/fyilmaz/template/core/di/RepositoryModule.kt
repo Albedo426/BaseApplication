@@ -1,6 +1,7 @@
 package com.fyilmaz.template.core.di
 
 import android.content.Context
+import com.fyilmaz.template.core.common.PreferenceManager
 import com.fyilmaz.template.core.data.local.LocalData
 import com.fyilmaz.template.core.data.local.LocalDataImpl
 import com.fyilmaz.template.core.data.remote.MovieService
@@ -23,6 +24,10 @@ object RepositoryModule {
     @Provides
     fun provideNetwork(@ApplicationContext context: Context): Network {
         return Network(context)
+    }
+    @Provides
+    fun providePreferenceManager(@ApplicationContext context: Context): PreferenceManager {
+        return PreferenceManager(context)
     }
     @Provides
     fun provideCoroutineContext(): CoroutineContext {

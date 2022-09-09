@@ -13,7 +13,7 @@ class LocalDataImpl @Inject constructor(val context: Context) : LocalData {
         if (loginRequest.isExist(LoginRequest("Albedo426", "123123"))) {
             return Result.Success(
                 LoginResponse(
-                    "1", "fatih", "Yilmaz", "fatikyilmaz@hotmail.com"
+                    "1", "fatih", "Yilmaz", "fatikyilmaz@hotmail.com","testtoken"
                 )
             )
         }

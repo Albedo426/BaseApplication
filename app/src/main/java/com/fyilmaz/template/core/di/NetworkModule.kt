@@ -2,6 +2,7 @@ package com.fyilmaz.template.core.di
 
 import android.content.Context
 import androidx.viewbinding.BuildConfig
+import com.fyilmaz.template.core.common.PreferenceManager
 import com.fyilmaz.template.core.data.remote.MovieService
 import com.fyilmaz.template.core.di.qualifers.DefaultOkHttpClientBuilder
 import com.fyilmaz.template.core.di.qualifers.ProjectOkHttpClient
@@ -58,7 +59,8 @@ object NetworkModule {
     @Provides
     @DefaultOkHttpClientBuilder
     fun provideDefaultOkHttpBuilder(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
+        preferenceManager: PreferenceManager
     ): OkHttpClient.Builder {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = if (BuildConfig.DEBUG) {
@@ -74,7 +76,7 @@ object NetworkModule {
                 it.proceed(request.newBuilder().url(newUrl).build())
             }*/
             .addInterceptor(provideLoggingInterceptor())
-            .addInterceptor(AuthInterceptor())
+            .addInterceptor(AuthInterceptor(preferenceManager))
             .addNetworkInterceptor(loggingInterceptor)
             .callTimeout(DEFAULT_CALL_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS)
             .connectTimeout(DEFAULT_CONNECT_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS)

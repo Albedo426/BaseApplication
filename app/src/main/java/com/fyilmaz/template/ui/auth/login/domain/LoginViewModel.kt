@@ -39,7 +39,9 @@ class LoginViewModel @Inject constructor(val useCaseLogin: UseCaseLogin) : BaseV
             useCaseLogin.login(LoginRequest(username.value!!, password.value!!)).collect {
                 when (it) {
                     is Result.Error -> it.exception?.let { it1 -> handleException(it1) }
-                    is Result.Success -> _event.postValue(Event(LoginViewEvent.GoToMain))
+                    is Result.Success ->{
+                        _event.postValue(Event(LoginViewEvent.GoToMain(it.data)))
+                    }
                 }
                 setLoading(false)
                 // token save vb

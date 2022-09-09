@@ -14,7 +14,8 @@ class RandomUserViewHolder(
     binding = ViewholderHomeUserItemBinding.inflate(inflater, parent, false)
 ) {
     fun bind(viewModel: HomeViewModel, item: RandomUsers.Result) {
-        binding.userItemUiState=item
+        binding.userItemUiState = item
+        binding.viewModel = viewModel
         binding.executePendingBindings()
     }
 }

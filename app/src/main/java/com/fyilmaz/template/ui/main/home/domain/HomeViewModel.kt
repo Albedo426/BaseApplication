@@ -6,9 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.user.RandomUsers
-import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUser
 import com.fyilmaz.template.core.extensions.Event
+import com.fyilmaz.template.core.extensions.toastMessage
 import com.fyilmaz.template.core.platform.BaseViewModel
+import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,7 +25,6 @@ class HomeViewModel @Inject constructor(val useCaseRandomUser: UseCaseRandomUser
 
     init {
         setLoading(true)
-        Log.e("TAG", "setLoading(true)")
         viewModelScope.launch {
             // login işlemi gelecek
             // nullsafe için sistem eklenecek
@@ -34,12 +34,15 @@ class HomeViewModel @Inject constructor(val useCaseRandomUser: UseCaseRandomUser
                     is Result.Success -> {
                         it.data.let { data ->
                             _userList.value = data
-                            Log.e("TAG", "_userList.value = data")
                             setLoading(false)
                         }
                     }
                 }
             }
         }
+    }
+
+    fun recycleItemOnClick(item: RandomUsers.Result) {
+        toastMessage(item.name.first)
     }
 }

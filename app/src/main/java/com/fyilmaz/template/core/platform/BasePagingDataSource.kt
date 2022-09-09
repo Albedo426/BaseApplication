@@ -13,5 +13,4 @@ abstract class BasePagingDataSource<T : Any> :
     }
 
     abstract override suspend fun load(params: LoadParams<Int>): LoadResult<Int, T>
-
 }

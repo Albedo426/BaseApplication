@@ -20,7 +20,6 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
     private val viewModelClass: Class<VM>
 ) : AppCompatActivity() {
 
-    internal val disposable: CompositeDisposable by lazy { CompositeDisposable() }
 
     val binding by lazy {
         DataBindingUtil.setContentView(this, layoutId) as DB
@@ -50,18 +49,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
 
     private fun onViewEvent(event: BaseViewEvent) {
         when (event) {
-            BaseViewEvent.ForceLogout -> {
-                showError(R.string.user_not_found_error)
-            }
-            BaseViewEvent.ShowUserNotFoundError -> {
-                showError(R.string.user_not_found_error)
-            }
-            BaseViewEvent.ShowCommonNetworkError -> showError(R.string.something_went_wrong)
-
-            BaseViewEvent.ShowConnectivityError -> showError(R.string.connectivity_error)
             is BaseViewEvent.ShowCustomError -> showError(event.message)
-            is BaseViewEvent.ShowInternalServerError -> showError(R.string.something_went_wrong)
-            is BaseViewEvent.ShowWarningError -> showError(R.string.something_went_wrong)
         }
     }
 

@@ -4,6 +4,7 @@ import com.fyilmaz.template.R
 import com.fyilmaz.template.core.common.PageName.Login.login
 import com.fyilmaz.template.core.extensions.observeEvent
 import com.fyilmaz.template.core.platform.BaseFragment
+import com.fyilmaz.template.core.platform.GlobalApplication
 import com.fyilmaz.template.databinding.FragmentLoginBinding
 import com.fyilmaz.template.ui.MainActivity
 import com.fyilmaz.template.ui.auth.login.domain.LoginViewEvent
@@ -26,6 +27,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(
     private fun onViewEvent(event: LoginViewEvent) {
         when (event) {
             is LoginViewEvent.GoToMain -> {
+                GlobalApplication.preferenceManager.token=event.item.token
+                GlobalApplication.preferenceManager.isLogin=true
                 startActivity(MainActivity.newIntent(requireContext())).apply {
                     requireActivity().finish()
                 }

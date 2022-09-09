@@ -3,6 +3,7 @@ package com.fyilmaz.template.ui.prelogin.splash.presenter
 import com.fyilmaz.template.R
 import com.fyilmaz.template.core.common.PageName.Login.splash
 import com.fyilmaz.template.core.platform.BaseFragment
+import com.fyilmaz.template.core.platform.GlobalApplication
 import com.fyilmaz.template.databinding.FragmentSplashBinding
 import com.fyilmaz.template.ui.MainActivity
 import com.fyilmaz.template.ui.auth.AuthActivity
@@ -19,8 +20,21 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>(
     }
 
     override fun onDataBinding() {
-        startActivity(MainActivity.newIntent(requireContext())).apply {
-            requireActivity().finish()
+        val login = GlobalApplication.preferenceManager.isLogin
+        login?.let {
+            if (it) {
+                startActivity(MainActivity.newIntent(requireContext())).apply {
+                    requireActivity().finish()
+                }
+            } else {
+                startActivity(AuthActivity.newIntent(requireContext())).apply {
+                    requireActivity().finish()
+                }
+            }
+        } ?: run {
+            startActivity(AuthActivity.newIntent(requireContext())).apply {
+                requireActivity().finish()
+            }
         }
     }
 }

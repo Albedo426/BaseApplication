@@ -63,17 +63,12 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
     }
 
     fun showError(message: String) {
-        try {
-            Toasty.error(requireContext(), message).show()
-        } catch (e: IllegalStateException) {
-        }
+        Toasty.error(requireContext(), message).show()
+
     }
 
     fun showSuccess(message: String) {
-        try {
-            Toasty.success(requireContext(), message).show()
-        } catch (e: IllegalStateException) {
-        }
+        Toasty.success(requireContext(), message).show()
     }
 
     fun doubleClickBlocked(view: View) {
@@ -84,6 +79,7 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
     }
 
     internal fun hideSoftInput() {
+        
         activity?.let {
             (it.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).apply {
                 it.currentFocus

@@ -4,12 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
+            name="viewModel"
+            type="com.fyilmaz.template.ui.main.home.domain.HomeViewModel" />
+
+        <variable
             name="userItemUiState"
             type="com.fyilmaz.template.core.data.dto.user.RandomUsers.Result" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
+        android:onClick="@{()->viewModel.recycleItemOnClick(userItemUiState)}"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_padding_4dp"
         app:cardCornerRadius="@dimen/elevation_4"
