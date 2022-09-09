@@ -8,34 +8,19 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-@BindingAdapter("app:image")
-fun AppCompatImageView.imageURL(image: Any) {
-    Glide.with(this.context).load(image).into(this)
-}
 
 @BindingAdapter("app:image")
 fun ImageView.imageURL(image: Any) {
     Glide.with(this.context).load(image).into(this)
-}
-
-@BindingAdapter("app:imageUrl")
-fun AppCompatImageView.imageURL(url: String) {
-    Glide.with(this.context).load(url).into(this)
 }
 @BindingAdapter("app:imageUrl")
 fun ImageView.imageURL(url: String) {
     Glide.with(this.context).load(url).into(this)
 }
 @BindingAdapter("app:image")
-fun AppCompatImageView.imageURL(@DrawableRes image: Int) {
-    Glide.with(this.context).load(image).into(this)
-}
-
-@BindingAdapter("app:image")
 fun ImageView.imageURL(@DrawableRes image: Int) {
     Glide.with(this.context).load(image).into(this)
 }
-
 
 @BindingAdapter("app:floatImage")
 fun FloatingActionButton.imageSrc(@DrawableRes image: Int) {
