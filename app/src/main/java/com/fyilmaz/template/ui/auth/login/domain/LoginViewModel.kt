@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.login.LoginRequest
-import com.fyilmaz.template.core.data.usecase.login.UseCaseLogin
+import com.fyilmaz.template.ui.auth.login.domain.usecase.UseCaseLogin
 import com.fyilmaz.template.core.extensions.Event
 import com.fyilmaz.template.core.platform.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

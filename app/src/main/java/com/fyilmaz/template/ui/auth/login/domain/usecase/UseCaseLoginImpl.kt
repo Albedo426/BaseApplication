@@ -1,4 +1,4 @@
-package com.fyilmaz.template.core.data.usecase.login
+package com.fyilmaz.template.ui.auth.login.domain.usecase
 
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.login.LoginRequest

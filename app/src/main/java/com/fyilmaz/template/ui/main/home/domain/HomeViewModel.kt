@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.user.RandomUsers
-import com.fyilmaz.template.core.data.usecase.movie.UseCaseRandomUser
+import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUser
 import com.fyilmaz.template.core.extensions.Event
 import com.fyilmaz.template.core.platform.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

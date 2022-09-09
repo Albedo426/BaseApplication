@@ -2,10 +2,10 @@ package com.fyilmaz.template.core.di
 
 import com.fyilmaz.template.core.data.local.LocalData
 import com.fyilmaz.template.core.data.repository.RemoteDataRepository
-import com.fyilmaz.template.core.data.usecase.login.UseCaseLogin
-import com.fyilmaz.template.core.data.usecase.login.UseCaseLoginImpl
-import com.fyilmaz.template.core.data.usecase.movie.UseCaseRandomUser
-import com.fyilmaz.template.core.data.usecase.movie.UseCaseRandomUserImpl
+import com.fyilmaz.template.ui.auth.login.domain.usecase.UseCaseLogin
+import com.fyilmaz.template.ui.auth.login.domain.usecase.UseCaseLoginImpl
+import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUser
+import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUserImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

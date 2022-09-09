@@ -1,4 +1,4 @@
-package com.fyilmaz.template.core.data.usecase.movie
+package com.fyilmaz.template.ui.main.home.domain.home.randomuser
 
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.user.RandomUsers
