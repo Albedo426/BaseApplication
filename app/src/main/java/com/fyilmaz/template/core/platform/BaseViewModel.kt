@@ -1,6 +1,5 @@
 package com.fyilmaz.template.core.platform
 
-import android.util.Base64
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,8 +31,6 @@ abstract class BaseViewModel : ViewModel() {
         }
     }
 
-
-
     internal fun emitProgressShow() {
         progressStateObservable.postValue(ProgressState.Show)
     }
@@ -48,7 +45,6 @@ abstract class BaseViewModel : ViewModel() {
 
     fun showCustomError(message: String) =
         _baseEvent.postValue(Event(BaseViewEvent.ShowCustomError(message)))
-
 
     sealed class ProgressState {
         object Show : ProgressState()

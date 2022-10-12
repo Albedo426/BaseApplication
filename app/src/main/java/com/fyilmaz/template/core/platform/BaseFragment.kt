@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.result.ActivityResult
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.fyilmaz.template.R
 import com.fyilmaz.template.core.extensions.observe
 import com.fyilmaz.template.core.extensions.observeEvent
 import com.fyilmaz.template.core.views.ProgressDialog
@@ -27,7 +27,8 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
         ViewModelProvider(this).get(viewModelClass)
     }
     lateinit var binding: DB
-
+    protected val activityLauncher: BetterActivityResult<Intent, ActivityResult> =
+        BetterActivityResult.registerActivityForResult(this)
     lateinit var progressDialog: ProgressDialog
     abstract fun getScreenKey(): String
     abstract fun onDataBinding()
@@ -64,7 +65,6 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
 
     fun showError(message: String) {
         Toasty.error(requireContext(), message).show()
-
     }
 
     fun showSuccess(message: String) {
@@ -79,7 +79,6 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
     }
 
     internal fun hideSoftInput() {
-        
         activity?.let {
             (it.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).apply {
                 it.currentFocus

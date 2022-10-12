@@ -23,6 +23,7 @@ android {
         getByName(Flavors.BuildTypes.RELEASE) {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+
         }
     }
     compileOptions {
@@ -73,7 +74,7 @@ dependencies {
     implementation(Dependencies.LifeCycle.lifeCycleCompiler)
     implementation(Dependencies.LifeCycle.liveData)
     implementation(Dependencies.LifeCycle.viewModel)
-    implementation( "com.google.code.gson:gson:2.8.5")
+    implementation( "com.google.code.gson:gson:2.8.5") // silinebilir
     // Daager-Hilt
     implementation(Dependencies.DI.hilt)
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
@@ -108,7 +109,16 @@ dependencies {
     testImplementation(Dependencies.Test.coreTesting)
     testImplementation(Dependencies.Test.androidJunit)
     testImplementation(Dependencies.Test.espressoCore)
-    // logto
-    implementation("io.logto.sdk:android:1.0.0-alpha.0")
+
+    // Google
+    implementation(Dependencies.Google.googleLocation)
+
+    // Dialog
+    implementation(Dependencies.Dialogs.dialogCore)
+    implementation(Dependencies.Dialogs.dateTime)
+
+    // Room
+    implementation(Dependencies.Room.runtime)
+    kapt(Dependencies.Room.compiler)
 
 }

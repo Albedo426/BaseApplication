@@ -1,4 +1,4 @@
-package com.fyilmaz.template.ui.main.home.domain.home.randomuser
+package com.fyilmaz.template.ui.main.home.domain.usecase
 
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.user.RandomUsers

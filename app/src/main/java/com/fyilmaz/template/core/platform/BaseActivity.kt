@@ -3,6 +3,7 @@ package com.fyilmaz.template.core.platform
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,8 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel>(
     val viewModel by lazy {
         ViewModelProvider(this).get(viewModelClass)
     }
+    protected val activityLauncher: BetterActivityResult<Intent, ActivityResult> =
+        BetterActivityResult.registerActivityForResult(this)
 
     lateinit var progressDialog: ProgressDialog
     abstract fun onDataBinding()

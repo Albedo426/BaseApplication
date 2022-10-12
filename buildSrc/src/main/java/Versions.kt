@@ -73,12 +73,24 @@ object Versions {
         const val loggingInterceptor = okHttp
     }
 
+    object Google {
+        const val location = "19.0.0"
+        const val playServicesMaps = "18.0.2"
+        const val mapUtils = "2.2.5"
+    }
+
     object Tools {
         const val timber = "5.0.1"
+    }
+    object Room {
+        const val room = "2.4.3"
     }
 
     object Glide {
         const val core = "4.13.0"
+    }
+    object Dialogs {
+        const val core = "3.3.0"
     }
 
     object Test {

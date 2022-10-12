@@ -63,7 +63,7 @@ object Dependencies {
 
     object Coroutines {
 
-        val coroutinesAandroid by lazy {
+        val coroutinesAndroid by lazy {
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
         }
         val kotlinCoroutinesAdapter by lazy {
@@ -84,6 +84,16 @@ object Dependencies {
         }
     }
 
+    object Room {
+
+        val runtime by lazy {
+            "androidx.room:room-runtime:${Versions.Room.room}"
+        }
+        val compiler by lazy {
+            "androidx.room:room-compiler:${Versions.Room.room}"
+        }
+    }
+
     object Navigation {
         val runTimeNavigation by lazy {
             "androidx.navigation:navigation-runtime-ktx:${Versions.Navigation.runTimeNavigation}"
@@ -94,12 +104,6 @@ object Dependencies {
 
         val navigationUi by lazy {
             "androidx.navigation:navigation-ui-ktx:${Versions.Navigation.navigationUI}"
-        }
-    }
-
-    object Google {
-        val googleLocation by lazy {
-            "com.google.android.gms:play-services-location:18.0.0"
         }
     }
 
@@ -152,23 +156,23 @@ object Dependencies {
             "com.squareup.okhttp3:logging-interceptor:${Versions.Network.loggingInterceptor}"
         }
     }
-
-    object AppCenter {
-        val appCenterAnalytics by lazy {
-            "com.microsoft.appcenter:appcenter-analytics:4.3.1"
-        }
-        val appCenterCrashes by lazy {
-            "com.microsoft.appcenter:appcenter-crashes:4.3.1"
-        }
+    object Google {
+        const val playSevicesMap =
+            "com.google.android.gms:play-services-maps:${Versions.Google.playServicesMaps}"
+        const val googleLocation =
+            "com.google.android.gms:play-services-location:${Versions.Google.location}"
+        const val mapUtils =
+            "com.google.maps.android:android-maps-utils:${Versions.Google.mapUtils}"
     }
 
-    object MapBox {
-
-        val mapBoxAndroid by lazy {
-            "com.mapbox.navigation:android:2.7.0"
+    object Dialogs {
+        val dialogCore by lazy {
+            "com.afollestad.material-dialogs:core:${Versions.Dialogs.core}"
+        }
+        val dateTime by lazy {
+            "com.afollestad.material-dialogs:datetime:${Versions.Dialogs.core}"
         }
     }
-
     object Firebase {
         val firebaseBom by lazy {
             "com.google.firebase:firebase-bom:${Versions.GoogleFirebase.firebaseBom}"

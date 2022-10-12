@@ -14,8 +14,6 @@ class AuthInterceptor(
         builder.addHeader("Content-Type", "application/json")
 
         /*
-        builder.addHeader("Accept", "application/json")
-        builder.addHeader("Content-Type", "application/json")
         builder.addHeader("lang", preferenceManager.lang ?: "tr")
         if (preferenceManager.isLogin) {
             builder.addHeader("token", preferenceManager.token.toString())

@@ -6,9 +6,6 @@ import android.content.SharedPreferences
 import com.fyilmaz.template.core.extensions.get
 import com.fyilmaz.template.core.extensions.set
 
-/**
- * @user:murat.balci
- */
 
 class PreferenceManager(context: Context) {
 

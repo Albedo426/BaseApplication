@@ -1,6 +1,5 @@
 package com.fyilmaz.template.ui.main.home.domain
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -9,7 +8,7 @@ import com.fyilmaz.template.core.data.dto.user.RandomUsers
 import com.fyilmaz.template.core.extensions.Event
 import com.fyilmaz.template.core.extensions.toastMessage
 import com.fyilmaz.template.core.platform.BaseViewModel
-import com.fyilmaz.template.ui.main.home.domain.home.randomuser.UseCaseRandomUser
+import com.fyilmaz.template.ui.main.home.domain.usecase.UseCaseRandomUser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

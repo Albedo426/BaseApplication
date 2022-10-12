@@ -23,5 +23,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="location_permission_description">GPS\'iniz devre dışı görünüyor, Uygulama kullanırken GPS açık olması gerekmektedir?</string>
+    <string name="permission_title">Konum İzni</string>
+    <string name="open_location">Konumu aç</string>
+    <string name="permission_message">Acil Durumda paylaşabilmemiz için konum izni vermeniz gerekiyor</string>
+
     <!-- ERROR -->
 </resources>
