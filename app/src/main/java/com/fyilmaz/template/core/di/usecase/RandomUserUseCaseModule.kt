@@ -1,9 +1,9 @@
-package com.fyilmaz.template.ui.main.home.domain.di
+package com.fyilmaz.template.core.di.usecase
 
 import com.fyilmaz.template.core.data.local.LocalData
 import com.fyilmaz.template.core.data.repository.RemoteDataRepository
-import com.fyilmaz.template.ui.main.home.domain.usecase.UseCaseRandomUser
-import com.fyilmaz.template.ui.main.home.domain.usecase.UseCaseRandomUserImpl
+import com.fyilmaz.template.core.data.usecase.randomuser.RandomUserUseCase
+import com.fyilmaz.template.core.data.usecase.randomuser.RandomUserUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,13 +12,13 @@ import kotlin.coroutines.CoroutineContext
 
 @Module
 @InstallIn(SingletonComponent::class)
-object HomeUseCaseModule {
+object RandomUserUseCaseModule {
     @Provides
     fun provideUseCaseMovie(
         remoteRepository: RemoteDataRepository,
         localRepository: LocalData,
         coroutine: CoroutineContext
-    ): UseCaseRandomUser {
-        return UseCaseRandomUserImpl(remoteRepository, localRepository, coroutine)
+    ): RandomUserUseCase {
+        return RandomUserUseCaseImpl(remoteRepository, localRepository, coroutine)
     }
 }

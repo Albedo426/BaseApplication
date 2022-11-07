@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomButton">
+        <attr name="backgroundNormal" format="reference|color" />
+        <attr name="defaultInterval" format="integer" />
+        <attr name="backgroundPress" format="reference|color" />
+        <attr name="backgroundInActive" format="reference|color" />
+        <attr name="isSafeClick" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditText">
+        <attr name="textBackgroundNormal" format="reference|color" />
+        <attr name="textBackgroundError" format="reference|color" />
+        <attr name="textBackgroundFocus" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="MyTextInputEditText" >
+        <attr name="string1" format="string" localization="suggested"/>
+        <attr name="string2" format="string"/>
+    </declare-styleable>
+</resources>

@@ -86,20 +86,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.fyilmaz.template.core.views.base.CustomButton
                 android:id="@+id/button"
-                style="@style/TextStyle3"
+                app:isSafeClick="true"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/margin_component_8x"
                 android:layout_marginStart="@dimen/margin_padding_30dp"
                 android:layout_marginTop="@dimen/margin_padding_30dp"
                 android:layout_marginEnd="@dimen/margin_padding_30dp"
-                android:background="@drawable/ic_round_button"
-                android:onClick="@{()-> viewModel.doLogin()}"
+                app:backgroundNormal="@drawable/ic_round_button"
+                app:mySetOnTouchListener="@{()->viewModel.doLogin()}"
                 android:text="@string/login"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                app:customAlphaEnabled="@{viewModel.enabled}"
+                app:customButtonEn="@{viewModel.enabled}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

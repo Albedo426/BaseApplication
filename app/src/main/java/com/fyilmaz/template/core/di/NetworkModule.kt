@@ -3,7 +3,7 @@ package com.fyilmaz.template.core.di
 import android.content.Context
 import androidx.viewbinding.BuildConfig
 import com.fyilmaz.template.core.common.PreferenceManager
-import com.fyilmaz.template.core.data.remote.MovieService
+import com.fyilmaz.template.core.data.remote.AppService
 import com.fyilmaz.template.core.di.qualifers.DefaultOkHttpClientBuilder
 import com.fyilmaz.template.core.di.qualifers.ProjectOkHttpClient
 import com.fyilmaz.template.core.di.qualifers.ProjectRetrofit
@@ -31,7 +31,7 @@ object NetworkModule {
     @Singleton
     fun provideProjectService(
         @ProjectRetrofit projectRetrofit: Retrofit
-    ): MovieService = projectRetrofit.create(MovieService::class.java)
+    ): AppService = projectRetrofit.create(AppService::class.java)
 
     @ProjectRetrofit
     @Provides

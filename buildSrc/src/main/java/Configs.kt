@@ -1,9 +1,9 @@
 object Configs {
     const val applicationId = "com.fatihylmz"
     const val minSdkVersion = 26
-    const val targetSdkVersion = 32
-    const val compileSdkVersion = 32
-    const val buildToolsVersion = "30.0.3"
+    const val targetSdkVersion = 33
+    const val compileSdkVersion = 33
+    const val buildToolsVersion = "1.0.0"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val versionCode = 1
     val versionName = calculateVersionName()

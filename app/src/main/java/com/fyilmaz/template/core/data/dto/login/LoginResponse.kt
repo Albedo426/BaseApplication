@@ -10,4 +10,7 @@ data class LoginResponse(
     val lastName: String,
     val email: String,
     val token: String
+
 )
+
+

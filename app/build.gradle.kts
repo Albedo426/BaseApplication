@@ -1,29 +1,31 @@
 plugins {
-    id(Plugins.androidApplication)
-    id(Plugins.safeargs)
-    kotlin(Plugins.android)
-    id(Plugins.kotlinAndroidExtensions)
-    id(Plugins.hiltPlugin)
-    kotlin(Plugins.kapt)
+    id("com.android.application")
+    id("androidx.navigation.safeargs")
+    id("kotlin-android")
+    id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 android {
-    compileSdkVersion(Configs.compileSdkVersion)
+    compileSdk = Configs.compileSdkVersion
     buildToolsVersion = Configs.buildToolsVersion
     defaultConfig {
         applicationId = Configs.applicationId
-        minSdkVersion(Configs.minSdkVersion)
-        targetSdkVersion(Configs.targetSdkVersion)
-        //multiDexEnabled = true
+        minSdk = 28
+        targetSdk = Configs.targetSdkVersion
+        // multiDexEnabled = true
         versionCode = Configs.versionCode
         versionName = Configs.versionName
         testInstrumentationRunner = Configs.testInstrumentationRunner
     }
 
     buildTypes {
+        getByName(Flavors.BuildTypes.DEBUG) {
+            isDebuggable = true
+        }
         getByName(Flavors.BuildTypes.RELEASE) {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-
         }
     }
     compileOptions {
@@ -38,7 +40,6 @@ android {
         dataBinding = true
     }
 }
-
 
 dependencies {
 
@@ -68,27 +69,15 @@ dependencies {
     implementation(Dependencies.Navigation.runTimeNavigation)
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.2")
+    implementation(Dependencies.Navigation.navigationDynamic)
     // LifeCycle
     implementation(Dependencies.LifeCycle.runTimeLiveCycle)
     implementation(Dependencies.LifeCycle.lifeCycleCompiler)
     implementation(Dependencies.LifeCycle.liveData)
     implementation(Dependencies.LifeCycle.viewModel)
-    implementation( "com.google.code.gson:gson:2.8.5") // silinebilir
     // Daager-Hilt
     implementation(Dependencies.DI.hilt)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.paging:paging-common-ktx:3.1.1")
     kapt(Dependencies.DI.hiltCompiler)
-
-    // For instrumentation tests
-    testImplementation(Dependencies.DI.hiltAndroidTesting)
-    kaptAndroidTest(Dependencies.DI.hiltCompiler)
-
-    // For local unit tests
-    testImplementation(Dependencies.DI.hiltAndroidTesting)
-    kaptTest(Dependencies.DI.hiltCompiler)
-
     // Network
     implementation(Dependencies.Network.gson)
     implementation(Dependencies.Network.gsonAdapter)
@@ -121,4 +110,6 @@ dependencies {
     implementation(Dependencies.Room.runtime)
     kapt(Dependencies.Room.compiler)
 
+    // Paging
+    implementation("androidx.paging:paging-common-ktx:3.1.1")
 }

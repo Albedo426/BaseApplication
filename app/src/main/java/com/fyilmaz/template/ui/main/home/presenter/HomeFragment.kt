@@ -18,6 +18,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
     viewModelClass = HomeViewModel::class.java
 ) {
 
+
     private lateinit var userAdapter: RandomUserAdapter
     override fun getScreenKey(): String {
         return PageName.Main.home

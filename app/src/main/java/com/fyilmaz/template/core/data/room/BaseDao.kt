@@ -1,4 +1,4 @@
-package com.fyilmaz.template.core.data.local.room
+package com.fyilmaz.template.core.data.room
 
 import androidx.room.Dao
 import androidx.room.Delete

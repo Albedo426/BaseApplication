@@ -1,4 +1,4 @@
-package com.fyilmaz.template.ui.main.home.domain.usecase
+package com.fyilmaz.template.core.data.usecase.randomuser
 
 import com.fyilmaz.template.core.data.Result
 import com.fyilmaz.template.core.data.dto.user.RandomUsers
@@ -10,12 +10,12 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-class UseCaseRandomUserImpl @Inject constructor(
+class RandomUserUseCaseImpl @Inject constructor(
     private val remoteRepository: RemoteDataRepository,
     private val localRepository: LocalData,
     private val coroutine: CoroutineContext
 ) :
-    UseCaseRandomUser {
+    RandomUserUseCase {
     override suspend fun fetchData(): Flow<Result<RandomUsers>> {
         return flow {
             emit(remoteRepository.fetchData())

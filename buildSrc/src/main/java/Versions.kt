@@ -35,6 +35,7 @@ object Versions {
         const val runTimeNavigation = navigationVersion
         const val navigationFragment = navigationVersion
         const val navigationUI = navigationVersion
+        const val navigationDynamic = navigationVersion
     }
 
     object LifeCycle {
@@ -56,7 +57,7 @@ object Versions {
     }
 
     object DI {
-        const val hilt = "2.41"
+        const val hilt = "2.44"
         const val hiltWork = "1.0.0"
         const val hiltNavigation = "1.0.0"
         const val hiltViewModel = "1.0.0-alpha03"

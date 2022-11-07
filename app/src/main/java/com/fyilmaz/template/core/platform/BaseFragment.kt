@@ -42,10 +42,11 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
         observeEvent(viewModel.baseEvent, ::onViewEvent)
 
         observe(viewModel.loading) {
-            if (it)
+            if (it) {
                 showProgressView()
-            else
+            } else {
                 hideProgressView()
+            }
         }
     }
     override fun onCreateView(

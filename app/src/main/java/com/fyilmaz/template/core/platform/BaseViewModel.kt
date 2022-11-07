@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 
 abstract class BaseViewModel : ViewModel() {
 
-    internal val progressStateObservable: MutableLiveData<ProgressState> by lazy {
+    private val progressStateObservable: MutableLiveData<ProgressState> by lazy {
         MutableLiveData()
     }
 

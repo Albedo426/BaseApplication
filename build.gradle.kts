@@ -2,7 +2,8 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath(Classpaths.gradleClasspath)
@@ -10,10 +11,15 @@ buildscript {
         classpath(Classpaths.kotlinSerialization)
         classpath(Classpaths.safeVarargs)
         classpath(Classpaths.hiltGradlePlugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 tasks.register("clean").configure {
     delete("build")
 }

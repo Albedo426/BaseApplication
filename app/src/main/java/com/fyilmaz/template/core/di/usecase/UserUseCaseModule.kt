@@ -1,9 +1,9 @@
-package com.fyilmaz.template.ui.auth.login.domain.di
+package com.fyilmaz.template.core.di.usecase
 
 import com.fyilmaz.template.core.data.local.LocalData
 import com.fyilmaz.template.core.data.repository.RemoteDataRepository
-import com.fyilmaz.template.ui.auth.login.domain.usecase.UseCaseLogin
-import com.fyilmaz.template.ui.auth.login.domain.usecase.UseCaseLoginImpl
+import com.fyilmaz.template.core.data.usecase.user.UserUseCase
+import com.fyilmaz.template.core.data.usecase.user.UserUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,13 +12,13 @@ import kotlin.coroutines.CoroutineContext
 
 @Module
 @InstallIn(SingletonComponent::class)
-object LoginUseCaseModule {
+object UserUseCaseModule {
     @Provides
     fun provideUseCaseLogin(
         remoteRepository: RemoteDataRepository,
         localRepository: LocalData,
         coroutine: CoroutineContext
-    ): UseCaseLogin {
-        return UseCaseLoginImpl(remoteRepository, localRepository, coroutine)
+    ): UserUseCase {
+        return UserUseCaseImpl(remoteRepository, localRepository, coroutine)
     }
 }

@@ -105,6 +105,9 @@ object Dependencies {
         val navigationUi by lazy {
             "androidx.navigation:navigation-ui-ktx:${Versions.Navigation.navigationUI}"
         }
+        val navigationDynamic by lazy {
+            "androidx.navigation:navigation-dynamic-features-fragment:${Versions.Navigation.navigationDynamic}"
+        }
     }
 
     object LifeCycle {

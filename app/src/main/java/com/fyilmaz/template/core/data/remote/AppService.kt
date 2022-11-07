@@ -1,12 +1,11 @@
 package com.fyilmaz.template.core.data.remote
 
-import com.fyilmaz.template.core.data.dto.movie.MovieResponse
 import com.fyilmaz.template.core.data.dto.user.RandomUsers
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieService {
+interface AppService {
     object Api {
         const val apiVersion = "api/"
     }

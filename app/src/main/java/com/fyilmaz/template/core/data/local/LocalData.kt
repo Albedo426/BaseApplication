@@ -6,4 +6,5 @@ import com.fyilmaz.template.core.data.dto.login.LoginResponse
 
 interface LocalData {
     fun doLogin(loginRequest: LoginRequest): Result<LoginResponse>
+    fun doTest(): Result<List<String>>
 }

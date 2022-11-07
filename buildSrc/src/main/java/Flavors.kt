@@ -1,3 +1,5 @@
+import java.util.*
+
 object Flavors {
     object ProductFlavors {
         const val DEV = "dev"
@@ -19,6 +21,6 @@ object Flavors {
         const val BUILD_TYPE = BuildTypes.DEBUG
         const val BUILD_FLAVOR = ProductFlavors.DEV
 
-        val BUILD_VARIANT = "${BUILD_FLAVOR.capitalize()}${BUILD_TYPE.capitalize()}"
+        val BUILD_VARIANT = "${BUILD_FLAVOR.capitalize(Locale.ROOT)}${BUILD_TYPE.capitalize(Locale.ROOT)}"
     }
 }

@@ -10,7 +10,6 @@
         <item name="android:textSize">@dimen/text_size_5</item>
         <item name="android:textColor">@color/main_text</item>
         <item name="hintTextColor">@color/dimmed_text</item>
-
         <item name="android:includeFontPadding">false</item>
     </style>
     <style name="TextStyle5b">

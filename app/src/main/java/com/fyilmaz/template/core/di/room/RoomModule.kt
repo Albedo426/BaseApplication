@@ -1,9 +1,9 @@
-package com.fyilmaz.template.core.di
+package com.fyilmaz.template.core.di.room
 
 import android.content.Context
 import androidx.room.Room
-import com.fyilmaz.template.core.data.local.room.AppDatabase
-import com.fyilmaz.template.core.data.local.room.dao.UserDao
+import com.fyilmaz.template.core.data.room.AppDatabase
+import com.fyilmaz.template.core.data.room.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -8,13 +8,13 @@ import com.fyilmaz.template.core.data.dto.user.RandomUsers
 import com.fyilmaz.template.core.extensions.Event
 import com.fyilmaz.template.core.extensions.toastMessage
 import com.fyilmaz.template.core.platform.BaseViewModel
-import com.fyilmaz.template.ui.main.home.domain.usecase.UseCaseRandomUser
+import com.fyilmaz.template.core.data.usecase.randomuser.RandomUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(val useCaseRandomUser: UseCaseRandomUser) : BaseViewModel() {
+class HomeViewModel @Inject constructor(val useCaseRandomUser: RandomUserUseCase) : BaseViewModel() {
 
     private val _event = MutableLiveData<Event<HomeViewEvent>>()
     val event: LiveData<Event<HomeViewEvent>> = _event
