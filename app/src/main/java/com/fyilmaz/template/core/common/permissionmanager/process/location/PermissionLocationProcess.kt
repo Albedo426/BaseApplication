@@ -16,6 +16,7 @@ import com.fyilmaz.template.core.common.permissionmanager.PermissionHelper
 import com.fyilmaz.template.core.common.permissionmanager.PermissionHelper.REQ_PERMISSION_LOCATION
 import com.fyilmaz.template.core.common.permissionmanager.process.BasePermissionProcess
 import com.fyilmaz.template.core.common.permissionmanager.process.IBaseProcess
+import com.fyilmaz.template.core.common.permissionmanager.process.RequestCode
 import com.fyilmaz.template.core.platform.BetterActivityResult
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -40,14 +41,15 @@ class PermissionLocationProcess(val context: Context, val fragment: Fragment, pr
             message(R.string.permission_message)
             title(R.string.permission_title)
             negativeButton(R.string.cancel) {
-                baseProcess.unsuccessfulPermission()
+                baseProcess.unsuccessfulPermission(requestCode = requestCode)
             }
             positiveButton(R.string.ok) {
                 requestLocationPermissions()
             }
         }
     }
-    fun permissionControl() {
+    fun permissionControl(requestCode: RequestCode) {
+        this.requestCode = requestCode
         if (!PermissionHelper.checkLocationPermission(context)) {
             locationRequestMessage()
         } else {
@@ -63,7 +65,7 @@ class PermissionLocationProcess(val context: Context, val fragment: Fragment, pr
             message(R.string.location_permission_description)
             title(R.string.permission_title)
             negativeButton(R.string.cancel) {
-                baseProcess.unsuccessfulPermission()
+                baseProcess.unsuccessfulPermission(requestCode = requestCode)
             }
             positiveButton(R.string.open_location) {
                 activityLauncher.launch(
@@ -90,7 +92,7 @@ class PermissionLocationProcess(val context: Context, val fragment: Fragment, pr
     private fun startLocationUpdates() {
         try {
             // permission was allowed
-            baseProcess.successPermission()
+            baseProcess.successPermission(requestCode = requestCode)
             val locationClient =
                 LocationServices.getFusedLocationProviderClient(
                     context

@@ -22,6 +22,8 @@
     <color name="unselect_color">#D9D9D9</color>
     <color name="settings_line">#F9F9F9</color>
     <color name="view_color">#F9F9F9</color>
+    <color name="main_blue">#155ED4</color>
+    <color name="main_blue_pressed">#6097F0</color>
     <color name="soft_gray">#BDBDBD</color>
     <!-- Shadow Colors -->
     <color name="shadow_01">#01360000</color>

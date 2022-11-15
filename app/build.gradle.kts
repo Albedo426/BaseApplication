@@ -5,6 +5,7 @@ plugins {
     id("kotlin-android-extensions")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
+    id("com.google.firebase.crashlytics")
 }
 android {
     compileSdk = Configs.compileSdkVersion
@@ -86,6 +87,12 @@ dependencies {
     implementation(Dependencies.Network.okHttp)
     implementation(Dependencies.Network.loggingInterceptor)
 
+    // Firebase
+    implementation(Dependencies.Firebase.firebaseBom)
+    implementation(Dependencies.Firebase.firebaseCrashlytics)
+    implementation(Dependencies.Firebase.firebaseAnalitics)
+    implementation(Dependencies.Firebase.firebaseConfig)
+
     // Glide
     implementation(Dependencies.Glide.glide)
     annotationProcessor(Dependencies.Glide.glideCompiler)
@@ -98,6 +105,7 @@ dependencies {
     testImplementation(Dependencies.Test.coreTesting)
     testImplementation(Dependencies.Test.androidJunit)
     testImplementation(Dependencies.Test.espressoCore)
+    testImplementation(Dependencies.DI.hiltAndroidTesting)
 
     // Google
     implementation(Dependencies.Google.googleLocation)

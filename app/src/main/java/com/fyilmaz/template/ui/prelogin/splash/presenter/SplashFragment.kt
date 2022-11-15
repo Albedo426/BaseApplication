@@ -2,6 +2,7 @@ package com.fyilmaz.template.ui.prelogin.splash.presenter
 
 import com.fyilmaz.template.R
 import com.fyilmaz.template.core.common.PageName.Login.splash
+import com.fyilmaz.template.core.common.firebse.RemoteConfig
 import com.fyilmaz.template.core.platform.BaseFragment
 import com.fyilmaz.template.core.platform.GlobalApplication
 import com.fyilmaz.template.databinding.FragmentSplashBinding
@@ -20,6 +21,9 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>(
     }
 
     override fun onDataBinding() {
+        route()
+    }
+    fun route() {
         val login = GlobalApplication.preferenceManager.isLogin
         login?.let {
             if (it) {

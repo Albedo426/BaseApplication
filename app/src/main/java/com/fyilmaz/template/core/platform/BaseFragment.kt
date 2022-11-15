@@ -13,8 +13,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.fyilmaz.template.core.common.FirebaseHelper
 import com.fyilmaz.template.core.extensions.observe
 import com.fyilmaz.template.core.extensions.observeEvent
+import com.fyilmaz.template.core.platform.GlobalApplication.Companion.firebaseAnalytics
 import com.fyilmaz.template.core.views.ProgressDialog
 import com.fyilmaz.template.core.views.toasty.Toasty
 
@@ -78,7 +80,17 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel>(
             postDelayed({ isEnabled = true }, 400)
         }
     }
-
+    fun firebaseSendEvent(eventName: String, eventList: ArrayList<Pair<String, String>>) {
+        logEventFirebase(
+            eventName,
+            FirebaseHelper.generateFirebaseEventParams(
+                eventList
+            )
+        )
+    }
+    private fun logEventFirebase(eventName: String, bundle: Bundle) {
+        firebaseAnalytics.logEvent(eventName, bundle)
+    }
     internal fun hideSoftInput() {
         activity?.let {
             (it.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).apply {

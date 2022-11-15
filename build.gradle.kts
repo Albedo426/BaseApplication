@@ -11,6 +11,7 @@ buildscript {
         classpath(Classpaths.kotlinSerialization)
         classpath(Classpaths.safeVarargs)
         classpath(Classpaths.hiltGradlePlugin)
+        classpath(Classpaths.crashlytics)
     }
 }
 

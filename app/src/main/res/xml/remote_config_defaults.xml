@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>maintenanceMessageEN</key>
+    <value>Because of a current maintenance this application cannot be used</value>
+  </entry>
+  <entry>
+    <key>forceUpdateMessageTR</key>
+    <value>Uygulamayı kullanmaya devam edebilmeniz için güncellemeniz gerekmektedir.</value>
+  </entry>
+  <entry>
+    <key>iosOptionalVersion</key>
+    <value>1</value>
+  </entry>
+  <entry>
+    <key>optionalUpdateMessageTR</key>
+    <value>Yeni bir güncelleme mevcut. Uygulamanızı güncellemenizi öneririz.</value>
+  </entry>
+  <entry>
+    <key>iosRequiredVersion</key>
+    <value>1</value>
+  </entry>
+  <entry>
+    <key>maintenanceMessageTR</key>
+    <value>Bakım nedeniyle uygulama şu anda kullanılamamaktadır.</value>
+  </entry>
+  <entry>
+    <key>androidRequiredVersion</key>
+    <value>1</value>
+  </entry>
+  <entry>
+    <key>isMaintenanceiOS</key>
+    <value>false</value>
+  </entry>
+  <entry>
+    <key>optionalUpdateMessageEN</key>
+    <value>There's a new version we recommend you to update</value>
+  </entry>
+  <entry>
+    <key>androidOptionalVersion</key>
+    <value>1</value>
+  </entry>
+  <entry>
+    <key>isMaintenanceAndroid</key>
+    <value>false</value>
+  </entry>
+  <entry>
+    <key>forceUpdateMessageEN</key>
+    <value>In order to continue to use this application you must update it.</value>
+  </entry>
+  <entry>
+    <key>androidMarketURL</key>
+    <value>https://play.google.com/store/apps/details?id=com.kale.alarm&amp;hl=en&amp;gl=US</value>
+  </entry>
+  <entry>
+    <key>iosMarketURL</key>
+    <value>https://apps.apple.com/tr/app/kale-alarm/id1639864447</value>
+  </entry>
+</defaults>

@@ -7,15 +7,45 @@
         <attr name="backgroundInActive" format="reference|color" />
         <attr name="isSafeClick" format="boolean" />
     </declare-styleable>
-
+    <declare-styleable name="CustomTestLiveData">
+        <attr name="testStr" format="string" />
+    </declare-styleable>
     <declare-styleable name="CustomEditText">
         <attr name="textBackgroundNormal" format="reference|color" />
         <attr name="textBackgroundError" format="reference|color" />
         <attr name="textBackgroundFocus" format="reference|color" />
     </declare-styleable>
 
-    <declare-styleable name="MyTextInputEditText" >
-        <attr name="string1" format="string" localization="suggested"/>
-        <attr name="string2" format="string"/>
+    <declare-styleable name="CustomLoginComponent">
+        <attr name="PageTitle" format="string" />
+        <attr name="ComponentLoginTextBackgroundNormal" format="reference|color" />
+        <attr name="ComponentLoginTextBackgroundError" format="reference|color" />
+        <attr name="ComponentLoginTextBackgroundFocus" format="reference|color" />
+        <attr name="ComponentLoginButtonBackgroundNormal" format="reference|color" />
+        <attr name="ComponentLoginLogo" format="reference|color" />
+        <attr name="ComponentLoginLogoText" format="string" />
+        <attr name="ComponentLoginDefaultInterval" format="integer" />
+        <attr name="ComponentLoginButtonBackgroundPress" format="reference|color" />
+        <attr name="ComponentLoginButtonBackgroundInActive" format="reference|color" />
+        <attr name="ComponentLoginIsSafeClick" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialSpinner">
+        <attr name="android:enabled" />
+        <attr name="android:focusable" />
+        <attr name="android:focusableInTouchMode" />
+        <attr name="android:prompt" />
+        <attr name="android:src" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="materialHint" format="string" />
+        <attr name="android:text" />
+        <attr name="android:gravity" />
+        <attr name="srcCompat" />
+        <attr name="spinnerMode" format="enum">
+            <enum name="dialog" value="0" />
+            <enum name="dropdown" value="1" />
+            <enum name="bottomsheet" value="2" />
+        </attr>
     </declare-styleable>
 </resources>

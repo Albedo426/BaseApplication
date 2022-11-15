@@ -13,13 +13,13 @@ class CustomButton(
     attrs: AttributeSet
 ) : AppCompatButton(context, attrs) {
 
-    private var defaultInterval: Int = 1000
+    var defaultInterval: Int = 1000
     private var lastTimeClicked: Long = 0
     var mySetOnTouchListener: (() -> Unit)? = null
     var backgroundInActive: Drawable? = null
     var backGroundDefault: Drawable? = null
     var backGroundPress: Drawable? = null
-    private var isSafeClick: Boolean = false
+    var isSafeClick: Boolean = false
     private var customAttributesStyle: TypedArray? = null
     init {
         customAttributesStyle = context.obtainStyledAttributes(attrs, R.styleable.CustomButton, 0, 0)

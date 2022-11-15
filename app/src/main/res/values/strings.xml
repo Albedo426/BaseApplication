@@ -27,6 +27,10 @@
     <string name="permission_title">Konum İzni</string>
     <string name="open_location">Konumu aç</string>
     <string name="permission_message">Acil Durumda paylaşabilmemiz için konum izni vermeniz gerekiyor</string>
-
     <!-- ERROR -->
+
+    <!-- FIREBASE-->
+    <string name="system">Sistem</string>
+    <string name="update">Güncelle</string>
+    <!-- FIREBASE-->
 </resources>

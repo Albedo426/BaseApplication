@@ -53,6 +53,7 @@ object Versions {
         const val firebaseCrashPlugin = "2.8.1"
         const val firebaseBom = "30.1.0"
         const val firebaseAnalitics = "21.0.0"
+        const val firebaseConfig = "21.0.2"
         const val firebaseCrashlytics = "18.2.10"
     }
 

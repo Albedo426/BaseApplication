@@ -12,5 +12,5 @@ object Classpaths {
    const val googleServices =
         "com.google.gms:google-services:4.3.10"
     const val crashlytics =
-        "com.google.firebase:firebase-crashlytics-gradle:2.8.1"
+        "com.google.firebase:firebase-crashlytics-gradle:2.9.1"
 }

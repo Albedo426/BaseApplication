@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.fyilmaz.template.R
 import com.fyilmaz.template.core.common.PageName.Login.login
 import com.fyilmaz.template.core.common.permissionmanager.process.IBaseProcess
+import com.fyilmaz.template.core.common.permissionmanager.process.RequestCode
 import com.fyilmaz.template.core.common.permissionmanager.process.location.PermissionLocationProcess
 import com.fyilmaz.template.core.extensions.observeEvent
 import com.fyilmaz.template.core.platform.BaseFragment
@@ -32,20 +33,23 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(
             context = requireContext(),
             fragment = this,
             object : IBaseProcess<Location> {
-                override fun successPermission(successEvent: Location?) {
-                    successEvent?.let {
-                        Toast.makeText(requireContext(), "successPermission", Toast.LENGTH_SHORT).show()
+                override fun successPermission(successEvent: Location?, requestCode: RequestCode) {
+                    if (requestCode == RequestCode.MainLocationPermission) {
+                        successEvent?.let {
+                            Toast.makeText(requireContext(), "successPermission", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
-                override fun unsuccessfulPermission(errorString: String?) {
-                    Toast.makeText(requireContext(), "unsuccessfulPermission", Toast.LENGTH_SHORT).show()
+                override fun unsuccessfulPermission(
+                    errorString: String?,
+                    requestCode: RequestCode
+                ) {
                 }
-
-                override fun loopPermission(loopEvent: Location?) {
+                override fun loopPermission(loopEvent: Location?, requestCode: RequestCode) {
                 }
             }
         )
-        plp.permissionControl()
+        plp.permissionControl(RequestCode.MainLocationPermission)
     }
 
     private fun onViewEvent(event: LoginViewEvent) {

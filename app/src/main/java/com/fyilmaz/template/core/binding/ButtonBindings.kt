@@ -4,7 +4,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.BindingAdapter
 import com.fyilmaz.template.core.views.base.CustomButton
 
-@BindingAdapter("app:customAlpha")
+@BindingAdapter("app:alphaChange")
 fun AppCompatButton.setAlpha(enabled: Boolean) {
     if (enabled) {
         this.alpha = 1.0f
@@ -13,7 +13,7 @@ fun AppCompatButton.setAlpha(enabled: Boolean) {
     }
 }
 
-@BindingAdapter("app:customAlphaEnabled")
+@BindingAdapter("app:alphaEnabledChange")
 fun AppCompatButton.setAlphaEn(enabled: Boolean) {
     if (enabled) {
         this.alpha = 1.0f
@@ -24,7 +24,7 @@ fun AppCompatButton.setAlphaEn(enabled: Boolean) {
     }
 }
 
-@BindingAdapter("app:customButtonEn")
+@BindingAdapter("app:customAlphaEn")
 fun CustomButton.setAlphaEn(enabled: Boolean) {
     if (enabled) {
         backgroundInActive?.let {

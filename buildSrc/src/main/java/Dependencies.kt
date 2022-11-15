@@ -186,6 +186,9 @@ object Dependencies {
         val firebaseAnalitics by lazy {
             "com.google.firebase:firebase-analytics:${Versions.GoogleFirebase.firebaseAnalitics}"
         }
+        val firebaseConfig by lazy {
+            "com.google.firebase:firebase-config-ktx:${Versions.GoogleFirebase.firebaseConfig}"
+        }
     }
 
     object Glide {

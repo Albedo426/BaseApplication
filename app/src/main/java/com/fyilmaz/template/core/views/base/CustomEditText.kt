@@ -17,7 +17,6 @@ class CustomEditText(
     var backgroundFocus: Drawable? = null
     private var customAttributesStyle: TypedArray? = null
     init {
-
         customAttributesStyle = context.obtainStyledAttributes(attrs, R.styleable.CustomEditText, 0, 0)
         customAttributesStyle?.let { attrsStyle ->
             // set attr
@@ -35,7 +34,7 @@ class CustomEditText(
             changeBackground(backgroundNormal)
         }
     }
-    private fun changeBackground(drawable: Drawable?) {
+    fun changeBackground(drawable: Drawable?) {
         drawable?.let {
             background = it
         }

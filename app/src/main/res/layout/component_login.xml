@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presenter.auth.forgot.presenter.ForgotPasswordFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/logoLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="@dimen/margin_component_4x"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pageTitle"
+                    style="@style/TextStyle5b"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="@string/user_login"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:visibility="gone"
+                    style="@style/TextStyle5b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_component_4x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <com.fyilmaz.template.core.views.base.CustomEditText
+                android:id="@+id/nameEditText"
+                style="@style/TextStyle0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_30dp"
+                android:layout_marginEnd="@dimen/margin_padding_30dp"
+                android:hint="@string/username"
+                android:lines="1"
+                android:paddingHorizontal="@dimen/margin_component_2x"
+                android:paddingVertical="@dimen/margin_padding_20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoLayout"
+                app:textBackgroundNormal="@drawable/ic_round_edit_text" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_12dp"
+                app:boxBackgroundColor="@color/settings_line"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeColor="@color/settings_line"
+                app:boxStrokeWidth="0dp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameEditText"
+                app:passwordToggleEnabled="true">
+
+                <com.fyilmaz.template.core.views.base.CustomEditText
+                    android:id="@+id/passwordEditText"
+                    style="@style/TextStyle0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textBackgroundNormal="@drawable/ic_round_edit_text"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:lines="1"
+                    android:paddingHorizontal="@dimen/margin_component_2x" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.fyilmaz.template.core.views.base.CustomButton
+                android:id="@+id/button"
+                app:isSafeClick="true"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_component_8x"
+                android:layout_marginStart="@dimen/margin_padding_30dp"
+                android:layout_marginTop="@dimen/margin_padding_30dp"
+                android:layout_marginEnd="@dimen/margin_padding_30dp"
+                app:backgroundNormal="@drawable/ic_round_button"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
