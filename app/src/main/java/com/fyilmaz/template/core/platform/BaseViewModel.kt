@@ -3,10 +3,13 @@ package com.fyilmaz.template.core.platform
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.fyilmaz.template.core.common.MyTimer
+import com.fyilmaz.template.core.common.TimerType
 import com.fyilmaz.template.core.data.dto.error.ErrorResponse
 import com.fyilmaz.template.core.extensions.Event
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
+import java.util.*
 
 abstract class BaseViewModel : ViewModel() {
 
@@ -22,6 +25,35 @@ abstract class BaseViewModel : ViewModel() {
 
     fun setLoading(loading: Boolean) = _loading.postValue(loading)
 
+    var myTimer: MyTimer? = null
+
+    fun runTimer(
+        onFinish: () -> Unit,
+        onTick: (millisUntilFinished: Long) -> Unit,
+        millisInFuture: Long,
+        countDownInterval: Long = 1,
+        timerLifecycle: Boolean=true,
+        typeTimer: TimerType = TimerType.OneTimeTimer,
+        oneTask: Boolean = true
+    ) {
+        myTimer = MyTimer(millisInFuture, countDownInterval)
+        myTimer?.startTimer(
+            {
+                onFinish()
+            },
+            {
+                onTick(it)
+            },
+            typeTimer,
+            timerLifecycle,
+            oneTask
+        )
+    }
+    override fun onCleared() {
+        super.onCleared()
+        myTimer?.timerClose()
+    }
+
     open fun handleException(e: ErrorResponse) {
         setLoading(false)
         e.message?.let {
@@ -30,17 +62,12 @@ abstract class BaseViewModel : ViewModel() {
             )
         }
     }
-
     internal fun emitProgressShow() {
         progressStateObservable.postValue(ProgressState.Show)
     }
 
     operator fun CompositeDisposable.plusAssign(disposable: Disposable) {
         add(disposable)
-    }
-
-    override fun onCleared() {
-        super.onCleared()
     }
 
     fun showCustomError(message: String) =
